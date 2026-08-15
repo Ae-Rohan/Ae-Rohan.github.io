@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,16 +26,12 @@ content="Rohan Salunkhe — Aerospace Engineer specializing in CFD, CAE, Aeroaco
 :root {
     --bg: #030914;
     --bg2: #06111f;
-    --card: rgba(10, 25, 43, 0.72);
-
+    --card: rgba(10, 25, 43, 0.78);
     --text: #f5f9ff;
     --muted: #9eafc2;
-
     --accent: #55b8ff;
     --accent2: #8bd8ff;
-
     --border: rgba(255,255,255,0.10);
-
     --max-width: 1180px;
 }
 
@@ -75,36 +72,27 @@ a {
     text-decoration: none;
 }
 
-button {
-    font-family: inherit;
-}
-
 
 /* =========================================================
-   SPACE / PARTICLE BACKGROUND
+   PARTICLE BACKGROUND
 ========================================================= */
 
 #spaceCanvas {
     position: fixed;
     inset: 0;
-
     width: 100%;
     height: 100%;
-
     z-index: 0;
     pointer-events: none;
-
-    opacity: 0.65;
+    opacity: 0.55;
 }
 
 .space-grid {
     position: fixed;
     inset: 0;
-
     z-index: 0;
     pointer-events: none;
-
-    opacity: 0.13;
+    opacity: 0.11;
 
     background-image:
         linear-gradient(
@@ -127,11 +115,6 @@ button {
     transform-origin: center bottom;
 }
 
-
-/* =========================================================
-   AEROSPACE GLOW
-========================================================= */
-
 .aerospace-glow {
     position: fixed;
 
@@ -143,11 +126,11 @@ button {
     background:
         radial-gradient(
             circle,
-            rgba(85,184,255,0.10),
+            rgba(85,184,255,0.09),
             transparent 70%
         );
 
-    top: 15%;
+    top: 10%;
     right: -180px;
 
     filter: blur(20px);
@@ -155,7 +138,10 @@ button {
     z-index: 0;
     pointer-events: none;
 
-    animation: glowFloat 8s ease-in-out infinite alternate;
+    animation:
+        glowFloat
+        8s ease-in-out
+        infinite alternate;
 }
 
 @keyframes glowFloat {
@@ -185,9 +171,10 @@ nav {
     z-index: 100;
 
     background:
-        rgba(3,9,20,0.72);
+        rgba(3,9,20,0.75);
 
-    backdrop-filter: blur(18px);
+    backdrop-filter:
+        blur(18px);
 
     border-bottom:
         1px solid var(--border);
@@ -203,12 +190,15 @@ nav {
     padding: 0 25px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 }
 
 .logo {
     font-size: 21px;
+
     font-weight: 800;
 
     letter-spacing: 1px;
@@ -222,6 +212,7 @@ nav {
     list-style: none;
 
     display: flex;
+
     gap: 27px;
 }
 
@@ -239,7 +230,7 @@ nav {
 
 
 /* =========================================================
-   MAIN CONTENT
+   MAIN
 ========================================================= */
 
 main,
@@ -273,7 +264,8 @@ section {
 }
 
 .section-title {
-    font-size: clamp(32px, 5vw, 46px);
+    font-size:
+        clamp(32px, 5vw, 46px);
 
     line-height: 1.1;
 
@@ -289,6 +281,7 @@ section {
     min-height: 100vh;
 
     display: flex;
+
     align-items: center;
 
     padding-top: 130px;
@@ -356,6 +349,7 @@ section {
     display: inline-flex;
 
     align-items: center;
+
     justify-content: center;
 
     padding:
@@ -434,7 +428,7 @@ section {
         linear-gradient(
             145deg,
             rgba(15,34,56,0.82),
-            rgba(7,18,31,0.65)
+            rgba(7,18,31,0.68)
         );
 
     border:
@@ -444,10 +438,12 @@ section {
 
     padding: 28px;
 
-    backdrop-filter: blur(12px);
+    backdrop-filter:
+        blur(12px);
 
     box-shadow:
-        0 20px 60px rgba(0,0,0,0.22);
+        0 20px 60px
+        rgba(0,0,0,0.22);
 }
 
 .about-card h3 {
@@ -510,7 +506,8 @@ section {
 
     padding: 27px;
 
-    backdrop-filter: blur(10px);
+    backdrop-filter:
+        blur(10px);
 
     transition:
         transform 0.35s,
@@ -540,7 +537,8 @@ section {
 }
 
 .skill-card:hover {
-    transform: translateY(-7px);
+    transform:
+        translateY(-7px);
 
     border-color:
         rgba(85,184,255,0.45);
@@ -603,41 +601,20 @@ section {
 
     padding: 32px;
 
-    backdrop-filter: blur(12px);
+    backdrop-filter:
+        blur(12px);
 
     transition:
         transform 0.35s,
         border-color 0.35s;
 }
 
-.project-card::after {
-    content: "";
-
-    position: absolute;
-
-    width: 130px;
-    height: 130px;
-
-    border-radius: 50%;
-
-    right: -70px;
-    bottom: -70px;
-
-    background:
-        rgba(85,184,255,0.06);
-
-    transition: 0.4s;
-}
-
 .project-card:hover {
-    transform: translateY(-8px);
+    transform:
+        translateY(-8px);
 
     border-color:
         rgba(85,184,255,0.5);
-}
-
-.project-card:hover::after {
-    transform: scale(1.5);
 }
 
 .project-number {
@@ -740,7 +717,8 @@ section {
 
     font-size: 13px;
 
-    margin: 5px 0 10px;
+    margin:
+        5px 0 10px;
 }
 
 .timeline-item p {
@@ -771,24 +749,8 @@ section {
             rgba(8,22,38,0.75)
         );
 
-    backdrop-filter: blur(12px);
-}
-
-.research-box::before {
-    content: "";
-
-    position: absolute;
-
-    width: 250px;
-    height: 250px;
-
-    right: -100px;
-    top: -100px;
-
-    border-radius: 50%;
-
-    border:
-        1px solid rgba(85,184,255,0.12);
+    backdrop-filter:
+        blur(12px);
 }
 
 .research-box p {
@@ -805,7 +767,8 @@ section {
     grid-template-columns:
         repeat(2,1fr);
 
-    gap: 13px 30px;
+    gap:
+        13px 30px;
 
     margin-top: 28px;
 }
@@ -861,7 +824,8 @@ footer {
     border-top:
         1px solid var(--border);
 
-    padding: 27px 20px;
+    padding:
+        27px 20px;
 
     text-align: center;
 
@@ -875,15 +839,15 @@ footer {
 
 
 /* =========================================================
-   FIGHTER JET
+   LARGE FIGHTER JET
 ========================================================= */
 
 #fighterJet {
 
     position: fixed;
 
-    width: 260px;
-    height: 120px;
+    width: 380px;
+    height: 175px;
 
     left: 0;
     top: 0;
@@ -893,22 +857,22 @@ footer {
     pointer-events: none;
 
     color:
-        rgba(147,213,255,0.19);
+        rgba(155,220,255,0.22);
 
     filter:
         drop-shadow(
-            0 0 8px
-            rgba(85,184,255,0.35)
+            0 0 10px
+            rgba(85,184,255,0.40)
         )
         drop-shadow(
-            0 0 30px
-            rgba(85,184,255,0.15)
+            0 0 35px
+            rgba(85,184,255,0.18)
         );
 
     transform:
         translate3d(
-            -350px,
-            30vh,
+            -450px,
+            28vh,
             0
         )
         rotate(-5deg);
@@ -916,7 +880,10 @@ footer {
     will-change:
         transform;
 
-    opacity: 0.95;
+    opacity: 0;
+
+    transition:
+        opacity 0.5s ease;
 }
 
 #fighterJet svg {
@@ -937,17 +904,17 @@ footer {
 
 .jet-highlight {
     fill:
-        rgba(210,240,255,0.28);
+        rgba(225,245,255,0.30);
 }
 
 .jet-cockpit {
     fill:
-        rgba(120,190,235,0.38);
+        rgba(100,190,240,0.45);
 }
 
 .jet-engine {
     fill:
-        rgba(35,85,120,0.65);
+        rgba(30,80,115,0.75);
 }
 
 
@@ -959,11 +926,11 @@ footer {
 
     position: absolute;
 
-    width: 95px;
-    height: 20px;
+    width: 120px;
+    height: 25px;
 
-    left: -72px;
-    top: 51px;
+    left: -95px;
+    top: 75px;
 
     transform-origin: right center;
 
@@ -971,27 +938,27 @@ footer {
         linear-gradient(
             90deg,
             transparent,
-            rgba(70,170,255,0.10),
-            rgba(110,215,255,0.80),
-            rgba(255,255,255,0.35),
+            rgba(70,170,255,0.08),
+            rgba(110,215,255,0.85),
+            rgba(255,255,255,0.40),
             transparent
         );
 
     filter:
-        blur(5px);
+        blur(6px);
 
     clip-path:
         polygon(
             100% 50%,
-            75% 15%,
-            0 42%,
-            0 58%,
-            75% 85%
+            75% 10%,
+            0 40%,
+            0 60%,
+            75% 90%
         );
 
     animation:
         exhaustPulse
-        0.14s
+        0.13s
         infinite alternate;
 }
 
@@ -1000,7 +967,7 @@ footer {
     from {
         transform:
             scaleX(0.65)
-            scaleY(0.75);
+            scaleY(0.70);
 
         opacity: 0.45;
     }
@@ -1008,7 +975,7 @@ footer {
     to {
         transform:
             scaleX(1.15)
-            scaleY(1.2);
+            scaleY(1.15);
 
         opacity: 0.95;
     }
@@ -1016,63 +983,61 @@ footer {
 
 
 /* =========================================================
-   VAPOR / CONTRAIL
+   CONTRAIL
 ========================================================= */
 
 .contrail {
 
     position: absolute;
 
-    width: 250px;
-    height: 8px;
+    width: 330px;
+    height: 10px;
 
-    left: -215px;
-    top: 55px;
+    left: -285px;
+    top: 82px;
 
     background:
         linear-gradient(
             90deg,
             transparent,
-            rgba(190,225,245,0.04),
-            rgba(190,225,245,0.16),
+            rgba(190,225,245,0.03),
+            rgba(190,225,245,0.18),
             transparent
         );
 
-    filter: blur(5px);
+    filter:
+        blur(6px);
 
     transform:
         rotate(-2deg);
 
-    opacity: 0.5;
+    opacity: 0.6;
 }
 
 
 /* =========================================================
-   SONIC RINGS
+   SONIC RING
 ========================================================= */
 
 .sonic-ring {
 
     position: absolute;
 
-    width: 85px;
-    height: 85px;
+    width: 110px;
+    height: 110px;
 
-    left: 135px;
-    top: 17px;
+    left: 200px;
+    top: 32px;
 
     border-radius: 50%;
 
     border:
         1px solid
-        rgba(125,211,252,0.13);
-
-    transform:
-        scale(0.5);
+        rgba(125,211,252,0.15);
 
     animation:
         sonicPulse
-        2.5s
+        2.2s
         infinite;
 
     opacity: 0;
@@ -1081,23 +1046,27 @@ footer {
 @keyframes sonicPulse {
 
     0% {
-        transform: scale(0.4);
+        transform:
+            scale(0.4);
+
         opacity: 0;
     }
 
     35% {
-        opacity: 0.5;
+        opacity: 0.45;
     }
 
     100% {
-        transform: scale(2);
+        transform:
+            scale(2);
+
         opacity: 0;
     }
 }
 
 
 /* =========================================================
-   MOBILE NAVIGATION
+   MOBILE
 ========================================================= */
 
 @media(max-width:800px) {
@@ -1135,26 +1104,24 @@ footer {
     }
 
     #fighterJet {
-        width: 165px;
-        height: 76px;
-
-        opacity: 0.42;
+        width: 260px;
+        height: 120px;
     }
 
     .jet-exhaust {
-        width: 65px;
+        width: 80px;
 
-        left: -50px;
+        left: -65px;
 
-        top: 33px;
+        top: 51px;
     }
 
     .contrail {
-        width: 150px;
+        width: 220px;
 
-        left: -135px;
+        left: -190px;
 
-        top: 37px;
+        top: 57px;
     }
 }
 
@@ -1168,7 +1135,9 @@ footer {
     *,
     *::before,
     *::after {
-        scroll-behavior: auto !important;
+
+        scroll-behavior:
+            auto !important;
 
         animation-duration:
             0.001ms !important;
@@ -1183,6 +1152,7 @@ footer {
     #spaceCanvas {
         display: none;
     }
+
 }
 
 </style>
@@ -1220,6 +1190,7 @@ footer {
         xmlns="http://www.w3.org/2000/svg">
 
         <!-- Main fuselage -->
+
         <path
             class="jet-body"
             d="
@@ -1233,6 +1204,7 @@ footer {
         />
 
         <!-- Nose -->
+
         <path
             class="jet-body"
             d="
@@ -1243,7 +1215,8 @@ footer {
             "
         />
 
-        <!-- Main upper wing -->
+        <!-- Upper main wing -->
+
         <path
             class="jet-body"
             d="
@@ -1254,7 +1227,8 @@ footer {
             "
         />
 
-        <!-- Main lower wing -->
+        <!-- Lower main wing -->
+
         <path
             class="jet-body"
             d="
@@ -1265,7 +1239,8 @@ footer {
             "
         />
 
-        <!-- Rear upper stabilizer -->
+        <!-- Upper rear stabilizer -->
+
         <path
             class="jet-body"
             d="
@@ -1276,7 +1251,8 @@ footer {
             "
         />
 
-        <!-- Rear lower stabilizer -->
+        <!-- Lower rear stabilizer -->
+
         <path
             class="jet-body"
             d="
@@ -1288,6 +1264,7 @@ footer {
         />
 
         <!-- Vertical stabilizer -->
+
         <path
             class="jet-body"
             d="
@@ -1298,7 +1275,8 @@ footer {
             "
         />
 
-        <!-- Secondary vertical stabilizer -->
+        <!-- Second stabilizer -->
+
         <path
             class="jet-body"
             d="
@@ -1310,6 +1288,7 @@ footer {
         />
 
         <!-- Engine -->
+
         <ellipse
             class="jet-engine"
             cx="38"
@@ -1319,6 +1298,7 @@ footer {
         />
 
         <!-- Cockpit -->
+
         <path
             class="jet-cockpit"
             d="
@@ -1331,6 +1311,7 @@ footer {
         />
 
         <!-- Cockpit highlight -->
+
         <path
             class="jet-highlight"
             d="
@@ -1342,6 +1323,7 @@ footer {
         />
 
         <!-- Wing highlight -->
+
         <path
             class="jet-highlight"
             d="
@@ -1352,7 +1334,8 @@ footer {
             "
         />
 
-        <!-- Body highlight -->
+        <!-- Fuselage highlight -->
+
         <path
             class="jet-highlight"
             d="
@@ -1375,97 +1358,116 @@ footer {
 
 <nav>
 
-    <div class="nav-container">
+<div class="nav-container">
 
-        <div class="logo">
-            Aero<span>Rohan</span>
-        </div>
-
-        <ul class="nav-links">
-
-            <li>
-                <a href="#about">About</a>
-            </li>
-
-            <li>
-                <a href="#skills">Skills</a>
-            </li>
-
-            <li>
-                <a href="#projects">Projects</a>
-            </li>
-
-            <li>
-                <a href="#experience">Experience</a>
-            </li>
-
-            <li>
-                <a href="#research">Research</a>
-            </li>
-
-            <li>
-                <a href="#contact">Contact</a>
-            </li>
-
-        </ul>
-
+    <div class="logo">
+        Aero<span>Rohan</span>
     </div>
 
+    <ul class="nav-links">
+
+        <li>
+            <a href="#about">
+                About
+            </a>
+        </li>
+
+        <li>
+            <a href="#skills">
+                Skills
+            </a>
+        </li>
+
+        <li>
+            <a href="#projects">
+                Projects
+            </a>
+        </li>
+
+        <li>
+            <a href="#experience">
+                Experience
+            </a>
+        </li>
+
+        <li>
+            <a href="#research">
+                Research
+            </a>
+        </li>
+
+        <li>
+            <a href="#contact">
+                Contact
+            </a>
+        </li>
+
+    </ul>
+
+</div>
+
 </nav>
+
+
+<!-- =======================================================
+     MAIN
+======================================================= -->
+
+<main>
 
 
 <!-- =======================================================
      HERO
 ======================================================= -->
 
-<main>
-
 <section class="hero">
 
-    <div class="hero-container">
+<div class="hero-container">
 
-        <div class="hero-tag">
-            Aerospace Engineering • CFD • CAE
-        </div>
+    <div class="hero-tag">
+        Aerospace Engineering • CFD • CAE
+    </div>
 
-        <h1>
-            Hi, I'm
-            <span>Rohan</span>.<br>
+    <h1>
 
-            I build & simulate
-            engineering systems.
-        </h1>
+        Hi, I'm
+        <span>Rohan</span>.<br>
 
-        <p class="hero-subtitle">
+        I build & simulate
+        engineering systems.
 
-            Aerospace Engineer focused on
-            Computational Fluid Dynamics,
-            Aeroacoustics, CAE and numerical
-            simulation.
+    </h1>
 
-        </p>
+    <p class="hero-subtitle">
 
-        <div class="hero-buttons">
+        Aerospace Engineer focused on
+        Computational Fluid Dynamics,
+        Aeroacoustics, CAE and numerical
+        simulation.
 
-            <a
-                href="#projects"
-                class="btn btn-primary">
+    </p>
 
-                View My Projects
+    <div class="hero-buttons">
 
-            </a>
+        <a
+            href="#projects"
+            class="btn btn-primary">
 
-            <a
-                href="#contact"
-                class="btn btn-outline">
+            View My Projects
 
-                Get In Touch
+        </a>
 
-            </a>
+        <a
+            href="#contact"
+            class="btn btn-outline">
 
-        </div>
+            Get In Touch
+
+        </a>
 
     </div>
+
+</div>
 
 </section>
 
@@ -1573,7 +1575,9 @@ footer {
 
         <div class="skill-card">
 
-            <h3>CFD</h3>
+            <h3>
+                CFD
+            </h3>
 
             <p>
                 ANSYS Fluent, ANSYS CFX,
@@ -1586,7 +1590,9 @@ footer {
 
         <div class="skill-card">
 
-            <h3>Aeroacoustics</h3>
+            <h3>
+                Aeroacoustics
+            </h3>
 
             <p>
                 Supersonic jet noise,
@@ -1599,7 +1605,9 @@ footer {
 
         <div class="skill-card">
 
-            <h3>CAE / FEM</h3>
+            <h3>
+                CAE / FEM
+            </h3>
 
             <p>
                 Structural analysis,
@@ -1613,7 +1621,9 @@ footer {
 
         <div class="skill-card">
 
-            <h3>CAD</h3>
+            <h3>
+                CAD
+            </h3>
 
             <p>
                 CATIA V5, SolidWorks and AutoCAD
@@ -1625,7 +1635,9 @@ footer {
 
         <div class="skill-card">
 
-            <h3>Programming</h3>
+            <h3>
+                Programming
+            </h3>
 
             <p>
                 Python, MATLAB and numerical
@@ -1637,7 +1649,9 @@ footer {
 
         <div class="skill-card">
 
-            <h3>Engineering Analysis</h3>
+            <h3>
+                Engineering Analysis
+            </h3>
 
             <p>
                 Fluid mechanics, aerodynamics,
@@ -1658,7 +1672,9 @@ footer {
      PROJECTS
 ======================================================= -->
 
-<section id="projects" class="projects">
+<section
+    id="projects"
+    class="projects">
 
 <div class="container">
 
@@ -1996,7 +2012,9 @@ footer {
      CONTACT
 ======================================================= -->
 
-<section id="contact" class="contact">
+<section
+    id="contact"
+    class="contact">
 
 <div class="container">
 
@@ -2016,7 +2034,6 @@ footer {
 
     <div class="socials">
 
-
         <a
             href="https://github.com/Ae-Rohan"
             target="_blank"
@@ -2025,7 +2042,6 @@ footer {
             GitHub
 
         </a>
-
 
         <a
             href="https://www.linkedin.com/"
@@ -2036,7 +2052,6 @@ footer {
 
         </a>
 
-
         <a
             href="mailto:your-email@example.com"
             class="btn btn-primary">
@@ -2044,7 +2059,6 @@ footer {
             Email Me
 
         </a>
-
 
     </div>
 
@@ -2074,11 +2088,8 @@ footer {
 <script>
 
 /* =========================================================
-   FIGHTER JET SCROLL ANIMATION
+   PARTICLE SYSTEM
 ========================================================= */
-
-const jet =
-    document.getElementById("fighterJet");
 
 const canvas =
     document.getElementById("spaceCanvas");
@@ -2086,51 +2097,12 @@ const canvas =
 const ctx =
     canvas.getContext("2d");
 
-
 let width =
     window.innerWidth;
 
 let height =
     window.innerHeight;
 
-
-let scrollY =
-    window.scrollY;
-
-let lastScrollY =
-    window.scrollY;
-
-let scrollVelocity =
-    0;
-
-
-/* Jet state */
-
-let jetX =
-    -380;
-
-let jetY =
-    height * 0.25;
-
-let jetRotation =
-    -6;
-
-
-/* Target state */
-
-let targetX =
-    jetX;
-
-let targetY =
-    jetY;
-
-let targetRotation =
-    jetRotation;
-
-
-/* =========================================================
-   CANVAS RESIZE
-========================================================= */
 
 function resizeCanvas() {
 
@@ -2155,10 +2127,6 @@ window.addEventListener(
     resizeCanvas
 );
 
-
-/* =========================================================
-   PARTICLE SYSTEM
-========================================================= */
 
 const particles = [];
 
@@ -2196,10 +2164,6 @@ for (
 }
 
 
-/* =========================================================
-   DRAW PARTICLES
-========================================================= */
-
 function drawParticles() {
 
     ctx.clearRect(
@@ -2236,7 +2200,12 @@ function drawParticles() {
         );
 
         ctx.fillStyle =
-            `rgba(125,211,252,${p.opacity})`;
+            `rgba(
+                125,
+                211,
+                252,
+                ${p.opacity}
+            )`;
 
         ctx.fill();
 
@@ -2244,197 +2213,6 @@ function drawParticles() {
 
 }
 
-
-/* =========================================================
-   SCROLL HANDLER
-========================================================= */
-
-window.addEventListener(
-    "scroll",
-    () => {
-
-        scrollY =
-            window.scrollY;
-
-        scrollVelocity =
-            scrollY -
-            lastScrollY;
-
-        lastScrollY =
-            scrollY;
-
-
-        const maxScroll =
-            document.documentElement
-                .scrollHeight -
-            window.innerHeight;
-
-
-        const progress =
-            maxScroll > 0
-                ? scrollY / maxScroll
-                : 0;
-
-
-        /*
-         * Four flight passes.
-         */
-
-        const flightCycles =
-            progress * 4;
-
-
-        const cycleIndex =
-            Math.floor(flightCycles);
-
-
-        const phase =
-            flightCycles -
-            cycleIndex;
-
-
-        /*
-         * Alternating direction.
-         */
-
-        const flyingRight =
-            cycleIndex % 2 === 0;
-
-
-        if (flyingRight) {
-
-            targetX =
-                -380 +
-                phase *
-                (width + 760);
-
-            targetRotation =
-                -5;
-
-        } else {
-
-            targetX =
-                width + 380 -
-                phase *
-                (width + 760);
-
-            targetRotation =
-                5;
-
-        }
-
-
-        /*
-         * Vertical flight path.
-         */
-
-        const wave =
-            Math.sin(
-                progress *
-                Math.PI *
-                4
-            );
-
-
-        targetY =
-            height *
-            (
-                0.28 +
-                wave * 0.25
-            );
-
-
-        /*
-         * Banking based on
-         * scroll direction.
-         */
-
-        if (scrollVelocity > 0) {
-
-            targetRotation += 4;
-
-        }
-
-        if (scrollVelocity < 0) {
-
-            targetRotation -= 4;
-
-        }
-
-    }
-);
-
-
-/* =========================================================
-   SMOOTH JET ANIMATION
-========================================================= */
-
-function animateJet() {
-
-    /*
-     * Smooth interpolation.
-     */
-
-    jetX +=
-        (targetX - jetX)
-        * 0.075;
-
-
-    jetY +=
-        (targetY - jetY)
-        * 0.075;
-
-
-    jetRotation +=
-        (targetRotation - jetRotation)
-        * 0.075;
-
-
-    /*
-     * Extra vertical movement
-     * from scroll velocity.
-     */
-
-    const velocityLift =
-        Math.max(
-            -12,
-            Math.min(
-                12,
-                scrollVelocity * 0.8
-            )
-        );
-
-
-    jet.style.transform =
-        `
-        translate3d(
-            ${jetX}px,
-            ${jetY + velocityLift}px,
-            0
-        )
-        rotate(${jetRotation}deg)
-        `;
-
-
-    /*
-     * Gradually reduce velocity.
-     */
-
-    scrollVelocity *= 0.88;
-
-
-    requestAnimationFrame(
-        animateJet
-    );
-
-}
-
-animateJet();
-
-
-/* =========================================================
-   PARTICLE ANIMATION
-========================================================= */
 
 function animateParticles() {
 
@@ -2450,34 +2228,214 @@ animateParticles();
 
 
 /* =========================================================
-   MOUSE PARALLAX
+   SINGLE FIGHTER JET FLY-BY
 ========================================================= */
 
-let mouseX = 0;
-let mouseY = 0;
+const jet =
+    document.getElementById("fighterJet");
+
+
+let jetX =
+    -450;
+
+let jetY =
+    window.innerHeight * 0.28;
+
+let targetX =
+    -450;
+
+let targetY =
+    jetY;
+
+let flying =
+    false;
+
+let hasFlown =
+    false;
+
+
+/*
+ * Start the jet only once when
+ * the user starts scrolling.
+ */
+
+window.addEventListener(
+    "scroll",
+    () => {
+
+        const currentScroll =
+            window.scrollY;
+
+
+        if (
+            !hasFlown &&
+            !flying &&
+            currentScroll > 80
+        ) {
+
+            flying =
+                true;
+
+
+            /*
+             * Make jet visible.
+             */
+
+            jet.style.opacity =
+                "1";
+
+
+            /*
+             * Start outside
+             * left edge.
+             */
+
+            jetX =
+                -450;
+
+
+            /*
+             * Jet flies slightly upward.
+             */
+
+            targetY =
+                window.innerHeight * 0.20;
+
+
+            /*
+             * Destination beyond
+             * right edge.
+             */
+
+            targetX =
+                window.innerWidth + 450;
+
+        }
+
+    }
+);
+
+
+/*
+ * Smooth animation.
+ */
+
+function animateJet() {
+
+    if (flying) {
+
+        /*
+         * Horizontal movement.
+         */
+
+        jetX +=
+            (targetX - jetX)
+            * 0.020;
+
+
+        /*
+         * Vertical climb.
+         */
+
+        jetY +=
+            (targetY - jetY)
+            * 0.012;
+
+
+        /*
+         * Calculate flight
+         * progress.
+         */
+
+        const progress =
+            (
+                jetX + 450
+            )
+            /
+            (
+                window.innerWidth + 900
+            );
+
+
+        /*
+         * Slight banking.
+         */
+
+        const rotation =
+            -5 -
+            Math.sin(
+                progress * Math.PI
+            ) * 7;
+
+
+        jet.style.transform =
+            `
+            translate3d(
+                ${jetX}px,
+                ${jetY}px,
+                0
+            )
+            rotate(${rotation}deg)
+            `;
+
+
+        /*
+         * Jet has completely
+         * left the screen.
+         */
+
+        if (
+            jetX >
+            window.innerWidth + 450
+        ) {
+
+            flying =
+                false;
+
+            hasFlown =
+                true;
+
+            jet.style.opacity =
+                "0";
+
+        }
+
+    }
+
+
+    requestAnimationFrame(
+        animateJet
+    );
+
+}
+
+animateJet();
+
+
+/* =========================================================
+   MOUSE PARALLAX
+========================================================= */
 
 window.addEventListener(
     "mousemove",
     (event) => {
 
-        mouseX =
-            (
-                event.clientX /
-                window.innerWidth -
-                0.5
-            );
+        const mouseX =
+            event.clientX /
+            window.innerWidth -
+            0.5;
 
-        mouseY =
-            (
-                event.clientY /
-                window.innerHeight -
-                0.5
-            );
+        const mouseY =
+            event.clientY /
+            window.innerHeight -
+            0.5;
+
 
         const grid =
             document.querySelector(
                 ".space-grid"
             );
+
 
         if (grid) {
 
@@ -2552,7 +2510,7 @@ document.addEventListener(
         } else {
 
             canvas.style.opacity =
-                "0.65";
+                "0.55";
 
         }
 
@@ -2561,6 +2519,6 @@ document.addEventListener(
 
 </script>
 
-
 </body>
 </html>
+```
