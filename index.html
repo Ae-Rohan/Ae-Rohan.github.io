@@ -1,503 +1,1424 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Rohan Salunkhe | Aerospace Engineer</title>
-
-    <meta name="description"
-          content="Rohan Salunkhe — Aerospace Engineer specializing in CFD, CAE, Aeroacoustics and Engineering Simulation.">
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        :root {
-            --bg: #07111f;
-            --bg2: #0b1728;
-            --card: #0f1d30;
-            --text: #f3f7fb;
-            --muted: #9eacbd;
-            --accent: #55b8ff;
-            --accent2: #7dd3fc;
-            --border: rgba(255,255,255,0.10);
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        /* NAVBAR */
-
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            backdrop-filter: blur(12px);
-            background: rgba(7,17,31,0.82);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .nav-container {
-            max-width: 1150px;
-            margin: auto;
-            height: 70px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 25px;
-        }
-
-        .logo {
-            font-size: 22px;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
-
-        .logo span {
-            color: var(--accent);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 28px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--muted);
-            font-size: 14px;
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent);
-        }
-
-        /* HERO */
-
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-            padding: 100px 25px 60px;
-        }
-
-        .hero::before {
-            content: "";
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            background: rgba(45, 160, 255, 0.12);
-            border-radius: 50%;
-            filter: blur(100px);
-            top: 10%;
-            right: 5%;
-        }
-
-        .hero-container {
-            max-width: 1150px;
-            width: 100%;
-            margin: auto;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-tag {
-            color: var(--accent);
-            font-size: 14px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 {
-            font-size: clamp(45px, 7vw, 82px);
-            line-height: 1.05;
-            max-width: 900px;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 span {
-            color: var(--accent);
-        }
-
-        .hero-subtitle {
-            font-size: 22px;
-            color: var(--muted);
-            max-width: 750px;
-            margin-bottom: 35px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 13px 23px;
-            border-radius: 7px;
-            font-size: 14px;
-            font-weight: 600;
-            transition: 0.3s;
-            border: 1px solid var(--border);
-        }
-
-        .btn-primary {
-            background: var(--accent);
-            color: #06101d;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            background: var(--accent2);
-        }
-
-        .btn-outline {
-            color: var(--text);
-            background: transparent;
-        }
-
-        .btn-outline:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-        }
-
-        /* GENERAL */
-
-        section {
-            padding: 100px 25px;
-        }
-
-        .container {
-            max-width: 1150px;
-            margin: auto;
-        }
-
-        .section-label {
-            color: var(--accent);
-            font-size: 13px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-        }
-
-        .section-title {
-            font-size: 38px;
-            margin-bottom: 45px;
-        }
-
-        /* ABOUT */
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1.3fr 0.7fr;
-            gap: 50px;
-            align-items: start;
-        }
-
-        .about-text {
-            color: var(--muted);
-            font-size: 17px;
-        }
-
-        .about-text p {
-            margin-bottom: 18px;
-        }
-
-        .about-card {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 28px;
-        }
-
-        .about-card h3 {
-            margin-bottom: 20px;
-        }
-
-        .info {
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-            padding: 12px 0;
-            border-bottom: 1px solid var(--border);
-            font-size: 14px;
-        }
-
-        .info:last-child {
-            border-bottom: none;
-        }
-
-        .info span:first-child {
-            color: var(--muted);
-        }
-
-        /* SKILLS */
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-        }
-
-        .skill-card {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 25px;
-            transition: 0.3s;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(85,184,255,0.5);
-        }
-
-        .skill-card h3 {
-            margin-bottom: 12px;
-            color: var(--accent);
-        }
-
-        .skill-card p {
-            color: var(--muted);
-            font-size: 14px;
-        }
-
-        /* PROJECTS */
-
-        .projects {
-            background: var(--bg2);
-        }
-
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 22px;
-        }
-
-        .project-card {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 30px;
-            transition: 0.3s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(85,184,255,0.5);
-        }
-
-        .project-number {
-            color: var(--accent);
-            font-size: 13px;
-            margin-bottom: 15px;
-        }
-
-        .project-card h3 {
-            font-size: 22px;
-            margin-bottom: 12px;
-        }
-
-        .project-card p {
-            color: var(--muted);
-            font-size: 15px;
-            margin-bottom: 18px;
-        }
-
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .tag {
-            font-size: 12px;
-            padding: 5px 10px;
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            color: var(--accent2);
-        }
-
-        /* EXPERIENCE */
-
-        .timeline {
-            border-left: 1px solid var(--border);
-            margin-left: 10px;
-        }
-
-        .timeline-item {
-            padding: 0 0 40px 35px;
-            position: relative;
-        }
-
-        .timeline-item::before {
-            content: "";
-            position: absolute;
-            width: 11px;
-            height: 11px;
-            border-radius: 50%;
-            background: var(--accent);
-            left: -6px;
-            top: 6px;
-        }
-
-        .timeline-item h3 {
-            font-size: 21px;
-        }
-
-        .timeline-item .company {
-            color: var(--accent);
-            margin: 5px 0;
-        }
-
-        .timeline-item .date {
-            color: var(--muted);
-            font-size: 13px;
-            margin-bottom: 10px;
-        }
-
-        .timeline-item p {
-            color: var(--muted);
-        }
-
-        /* RESEARCH */
-
-        .research-box {
-            background: linear-gradient(
-                135deg,
-                rgba(85,184,255,0.12),
-                rgba(125,211,252,0.03)
-            );
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 40px;
-        }
-
-        .research-box p {
-            color: var(--muted);
-            max-width: 850px;
-            font-size: 17px;
-        }
-
-        .research-list {
-            margin-top: 25px;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px 30px;
-        }
-
-        .research-list div {
-            color: var(--text);
-        }
-
-        .research-list div::before {
-            content: "→ ";
-            color: var(--accent);
-        }
-
-        /* CONTACT */
-
-        .contact {
-            text-align: center;
-        }
-
-        .contact p {
-            color: var(--muted);
-            max-width: 650px;
-            margin: 0 auto 30px;
-        }
-
-        .socials {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        /* FOOTER */
-
-        footer {
-            border-top: 1px solid var(--border);
-            padding: 25px;
-            text-align: center;
-            color: var(--muted);
-            font-size: 13px;
-        }
-
-        /* MOBILE */
-
-        @media (max-width: 800px) {
-
-            .nav-links {
-                display: none;
-            }
-
-            .about-grid,
-            .skills-grid,
-            .project-grid,
-            .research-list {
-                grid-template-columns: 1fr;
-            }
-
-            .hero h1 {
-                font-size: 48px;
-            }
-
-            .hero-subtitle {
-                font-size: 18px;
-            }
-
-            section {
-                padding: 75px 20px;
-            }
-
-            .section-title {
-                font-size: 32px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Rohan Salunkhe | Aerospace Engineer</title>
+
+<meta name="description"
+content="Rohan Salunkhe — Aerospace Engineer specializing in CFD, CAE, Aeroacoustics, FEM and Engineering Simulation.">
+
+<style>
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --bg: #030914;
+    --bg2: #06111f;
+    --card: rgba(10, 25, 43, 0.72);
+
+    --text: #f5f9ff;
+    --muted: #9eafc2;
+
+    --accent: #55b8ff;
+    --accent2: #8bd8ff;
+
+    --border: rgba(255,255,255,0.10);
+
+    --max-width: 1180px;
+}
+
+html {
+    background: var(--bg);
+}
+
+body {
+    font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 80% 10%,
+            rgba(35,130,210,0.12),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 10% 70%,
+            rgba(20,100,180,0.08),
+            transparent 30%
+        ),
+        var(--bg);
+
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   SPACE / PARTICLE BACKGROUND
+========================================================= */
+
+#spaceCanvas {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 0;
+    pointer-events: none;
+
+    opacity: 0.65;
+}
+
+.space-grid {
+    position: fixed;
+    inset: 0;
+
+    z-index: 0;
+    pointer-events: none;
+
+    opacity: 0.13;
+
+    background-image:
+        linear-gradient(
+            rgba(85,184,255,0.08) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(85,184,255,0.08) 1px,
+            transparent 1px
+        );
+
+    background-size: 80px 80px;
+
+    transform:
+        perspective(500px)
+        rotateX(58deg)
+        scale(1.7);
+
+    transform-origin: center bottom;
+}
+
+
+/* =========================================================
+   AEROSPACE GLOW
+========================================================= */
+
+.aerospace-glow {
+    position: fixed;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(85,184,255,0.10),
+            transparent 70%
+        );
+
+    top: 15%;
+    right: -180px;
+
+    filter: blur(20px);
+
+    z-index: 0;
+    pointer-events: none;
+
+    animation: glowFloat 8s ease-in-out infinite alternate;
+}
+
+@keyframes glowFloat {
+
+    from {
+        transform: translateY(-20px);
+    }
+
+    to {
+        transform: translateY(40px);
+    }
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+nav {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 100;
+
+    background:
+        rgba(3,9,20,0.72);
+
+    backdrop-filter: blur(18px);
+
+    border-bottom:
+        1px solid var(--border);
+}
+
+.nav-container {
+    max-width: var(--max-width);
+
+    height: 72px;
+
+    margin: auto;
+
+    padding: 0 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.nav-links {
+    list-style: none;
+
+    display: flex;
+    gap: 27px;
+}
+
+.nav-links a {
+    color: var(--muted);
+
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+main,
+section,
+footer {
+    position: relative;
+    z-index: 5;
+}
+
+section {
+    padding:
+        110px 25px;
+}
+
+.container {
+    max-width: var(--max-width);
+
+    margin: auto;
+}
+
+.section-label {
+    color: var(--accent);
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 12px;
+}
+
+.section-title {
+    font-size: clamp(32px, 5vw, 46px);
+
+    line-height: 1.1;
+
+    margin-bottom: 48px;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    padding-top: 130px;
+
+    overflow: hidden;
+}
+
+.hero-container {
+    width: 100%;
+
+    max-width: var(--max-width);
+
+    margin: auto;
+}
+
+.hero-tag {
+    color: var(--accent);
+
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 22px;
+}
+
+.hero h1 {
+    font-size:
+        clamp(48px, 8vw, 92px);
+
+    line-height: 0.98;
+
+    letter-spacing: -3px;
+
+    max-width: 1000px;
+
+    margin-bottom: 28px;
+}
+
+.hero h1 span {
+    color: var(--accent);
+}
+
+.hero-subtitle {
+    max-width: 720px;
+
+    color: var(--muted);
+
+    font-size:
+        clamp(18px, 2vw, 22px);
+
+    margin-bottom: 38px;
+}
+
+.hero-buttons {
+    display: flex;
+
+    gap: 14px;
+
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding:
+        13px 22px;
+
+    border-radius: 7px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    border:
+        1px solid var(--border);
+
+    transition:
+        transform 0.3s,
+        border-color 0.3s,
+        background 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn-primary {
+    color: #03101c;
+
+    background: var(--accent);
+}
+
+.btn-primary:hover {
+    background: var(--accent2);
+}
+
+.btn-outline {
+    background:
+        rgba(255,255,255,0.025);
+
+    color: var(--text);
+}
+
+.btn-outline:hover {
+    border-color: var(--accent);
+
+    color: var(--accent);
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-grid {
+    display: grid;
+
+    grid-template-columns:
+        1.4fr 0.8fr;
+
+    gap: 60px;
+
+    align-items: start;
+}
+
+.about-text {
+    color: var(--muted);
+
+    font-size: 17px;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+}
+
+.about-card {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(15,34,56,0.82),
+            rgba(7,18,31,0.65)
+        );
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 14px;
+
+    padding: 28px;
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.22);
+}
+
+.about-card h3 {
+    margin-bottom: 18px;
+}
+
+.info {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 13px 0;
+
+    border-bottom:
+        1px solid var(--border);
+
+    font-size: 14px;
+}
+
+.info:last-child {
+    border-bottom: none;
+}
+
+.info span:first-child {
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.skills-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 18px;
+}
+
+.skill-card {
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(15,32,53,0.75),
+            rgba(7,17,30,0.75)
+        );
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 12px;
+
+    padding: 27px;
+
+    backdrop-filter: blur(10px);
+
+    transition:
+        transform 0.35s,
+        border-color 0.35s;
+}
+
+.skill-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 100%;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--accent),
+            transparent
+        );
+
+    transition: 0.6s;
+}
+
+.skill-card:hover {
+    transform: translateY(-7px);
+
+    border-color:
+        rgba(85,184,255,0.45);
+}
+
+.skill-card:hover::before {
+    left: 100%;
+}
+
+.skill-card h3 {
+    color: var(--accent);
+
+    margin-bottom: 12px;
+
+    font-size: 19px;
+}
+
+.skill-card p {
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.projects {
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            rgba(6,18,31,0.72),
+            transparent
+        );
+}
+
+.project-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap: 22px;
+}
+
+.project-card {
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        rgba(8,22,38,0.78);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 14px;
+
+    padding: 32px;
+
+    backdrop-filter: blur(12px);
+
+    transition:
+        transform 0.35s,
+        border-color 0.35s;
+}
+
+.project-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 130px;
+    height: 130px;
+
+    border-radius: 50%;
+
+    right: -70px;
+    bottom: -70px;
+
+    background:
+        rgba(85,184,255,0.06);
+
+    transition: 0.4s;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+
+    border-color:
+        rgba(85,184,255,0.5);
+}
+
+.project-card:hover::after {
+    transform: scale(1.5);
+}
+
+.project-number {
+    color: var(--accent);
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 14px;
+}
+
+.project-card h3 {
+    font-size: 23px;
+
+    margin-bottom: 13px;
+}
+
+.project-card p {
+    color: var(--muted);
+
+    font-size: 15px;
+
+    margin-bottom: 20px;
+}
+
+.tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+.tag {
+    padding:
+        5px 10px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 20px;
+
+    color: var(--accent2);
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   EXPERIENCE
+========================================================= */
+
+.timeline {
+    border-left:
+        1px solid var(--border);
+
+    margin-left: 10px;
+}
+
+.timeline-item {
+    position: relative;
+
+    padding:
+        0 0 45px 35px;
+}
+
+.timeline-item::before {
+    content: "";
+
+    position: absolute;
+
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: var(--accent);
+
+    left: -5px;
+    top: 7px;
+
+    box-shadow:
+        0 0 15px
+        rgba(85,184,255,0.65);
+}
+
+.timeline-item h3 {
+    font-size: 21px;
+}
+
+.timeline-item .company {
+    color: var(--accent);
+
+    margin-top: 4px;
+}
+
+.timeline-item .date {
+    color: var(--muted);
+
+    font-size: 13px;
+
+    margin: 5px 0 10px;
+}
+
+.timeline-item p {
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   RESEARCH
+========================================================= */
+
+.research-box {
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 42px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(85,184,255,0.10),
+            rgba(8,22,38,0.75)
+        );
+
+    backdrop-filter: blur(12px);
+}
+
+.research-box::before {
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+    height: 250px;
+
+    right: -100px;
+    top: -100px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(85,184,255,0.12);
+}
+
+.research-box p {
+    color: var(--muted);
+
+    max-width: 850px;
+
+    font-size: 17px;
+}
+
+.research-list {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap: 13px 30px;
+
+    margin-top: 28px;
+}
+
+.research-list div {
+    color: var(--text);
+
+    font-size: 14px;
+}
+
+.research-list div::before {
+    content: "→ ";
+
+    color: var(--accent);
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact {
+    text-align: center;
+
+    padding-bottom: 120px;
+}
+
+.contact p {
+    max-width: 650px;
+
+    margin:
+        0 auto 30px;
+
+    color: var(--muted);
+}
+
+.socials {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 13px;
+
+    flex-wrap: wrap;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    border-top:
+        1px solid var(--border);
+
+    padding: 27px 20px;
+
+    text-align: center;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    background:
+        rgba(2,7,14,0.65);
+}
+
+
+/* =========================================================
+   FIGHTER JET
+========================================================= */
+
+#fighterJet {
+
+    position: fixed;
+
+    width: 260px;
+    height: 120px;
+
+    left: 0;
+    top: 0;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    color:
+        rgba(147,213,255,0.19);
+
+    filter:
+        drop-shadow(
+            0 0 8px
+            rgba(85,184,255,0.35)
+        )
+        drop-shadow(
+            0 0 30px
+            rgba(85,184,255,0.15)
+        );
+
+    transform:
+        translate3d(
+            -350px,
+            30vh,
+            0
+        )
+        rotate(-5deg);
+
+    will-change:
+        transform;
+
+    opacity: 0.95;
+}
+
+#fighterJet svg {
+    width: 100%;
+    height: 100%;
+
+    overflow: visible;
+}
+
+
+/* =========================================================
+   JET DETAILS
+========================================================= */
+
+.jet-body {
+    fill: currentColor;
+}
+
+.jet-highlight {
+    fill:
+        rgba(210,240,255,0.28);
+}
+
+.jet-cockpit {
+    fill:
+        rgba(120,190,235,0.38);
+}
+
+.jet-engine {
+    fill:
+        rgba(35,85,120,0.65);
+}
+
+
+/* =========================================================
+   ENGINE EXHAUST
+========================================================= */
+
+.jet-exhaust {
+
+    position: absolute;
+
+    width: 95px;
+    height: 20px;
+
+    left: -72px;
+    top: 51px;
+
+    transform-origin: right center;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(70,170,255,0.10),
+            rgba(110,215,255,0.80),
+            rgba(255,255,255,0.35),
+            transparent
+        );
+
+    filter:
+        blur(5px);
+
+    clip-path:
+        polygon(
+            100% 50%,
+            75% 15%,
+            0 42%,
+            0 58%,
+            75% 85%
+        );
+
+    animation:
+        exhaustPulse
+        0.14s
+        infinite alternate;
+}
+
+@keyframes exhaustPulse {
+
+    from {
+        transform:
+            scaleX(0.65)
+            scaleY(0.75);
+
+        opacity: 0.45;
+    }
+
+    to {
+        transform:
+            scaleX(1.15)
+            scaleY(1.2);
+
+        opacity: 0.95;
+    }
+}
+
+
+/* =========================================================
+   VAPOR / CONTRAIL
+========================================================= */
+
+.contrail {
+
+    position: absolute;
+
+    width: 250px;
+    height: 8px;
+
+    left: -215px;
+    top: 55px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(190,225,245,0.04),
+            rgba(190,225,245,0.16),
+            transparent
+        );
+
+    filter: blur(5px);
+
+    transform:
+        rotate(-2deg);
+
+    opacity: 0.5;
+}
+
+
+/* =========================================================
+   SONIC RINGS
+========================================================= */
+
+.sonic-ring {
+
+    position: absolute;
+
+    width: 85px;
+    height: 85px;
+
+    left: 135px;
+    top: 17px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(125,211,252,0.13);
+
+    transform:
+        scale(0.5);
+
+    animation:
+        sonicPulse
+        2.5s
+        infinite;
+
+    opacity: 0;
+}
+
+@keyframes sonicPulse {
+
+    0% {
+        transform: scale(0.4);
+        opacity: 0;
+    }
+
+    35% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   MOBILE NAVIGATION
+========================================================= */
+
+@media(max-width:800px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-container {
+        height: 64px;
+    }
+
+    section {
+        padding:
+            85px 20px;
+    }
+
+    .hero {
+        padding-top: 110px;
+    }
+
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+
+    .about-grid,
+    .skills-grid,
+    .project-grid,
+    .research-list {
+        grid-template-columns: 1fr;
+    }
+
+    .research-box {
+        padding: 28px;
+    }
+
+    #fighterJet {
+        width: 165px;
+        height: 76px;
+
+        opacity: 0.42;
+    }
+
+    .jet-exhaust {
+        width: 65px;
+
+        left: -50px;
+
+        top: 33px;
+    }
+
+    .contrail {
+        width: 150px;
+
+        left: -135px;
+
+        top: 37px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media(prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+
+        animation-duration:
+            0.001ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            0.001ms !important;
+    }
+
+    #spaceCanvas {
+        display: none;
+    }
+}
+
+</style>
 </head>
+
 
 <body>
 
-<!-- NAVIGATION -->
+
+<!-- =======================================================
+     BACKGROUND
+======================================================= -->
+
+<canvas id="spaceCanvas"></canvas>
+
+<div class="space-grid"></div>
+
+<div class="aerospace-glow"></div>
+
+
+<!-- =======================================================
+     FIGHTER JET
+======================================================= -->
+
+<div id="fighterJet">
+
+    <div class="jet-exhaust"></div>
+
+    <div class="contrail"></div>
+
+    <div class="sonic-ring"></div>
+
+    <svg
+        viewBox="0 0 320 140"
+        xmlns="http://www.w3.org/2000/svg">
+
+        <!-- Main fuselage -->
+        <path
+            class="jet-body"
+            d="
+            M15 70
+            L215 58
+            L300 70
+            L215 82
+            L15 70
+            Z
+            "
+        />
+
+        <!-- Nose -->
+        <path
+            class="jet-body"
+            d="
+            M205 58
+            L315 70
+            L205 82
+            Z
+            "
+        />
+
+        <!-- Main upper wing -->
+        <path
+            class="jet-body"
+            d="
+            M175 61
+            L82 10
+            L110 63
+            Z
+            "
+        />
+
+        <!-- Main lower wing -->
+        <path
+            class="jet-body"
+            d="
+            M175 79
+            L82 130
+            L110 77
+            Z
+            "
+        />
+
+        <!-- Rear upper stabilizer -->
+        <path
+            class="jet-body"
+            d="
+            M125 62
+            L95 30
+            L110 65
+            Z
+            "
+        />
+
+        <!-- Rear lower stabilizer -->
+        <path
+            class="jet-body"
+            d="
+            M125 78
+            L95 110
+            L110 75
+            Z
+            "
+        />
+
+        <!-- Vertical stabilizer -->
+        <path
+            class="jet-body"
+            d="
+            M145 60
+            L125 15
+            L160 59
+            Z
+            "
+        />
+
+        <!-- Secondary vertical stabilizer -->
+        <path
+            class="jet-body"
+            d="
+            M155 80
+            L138 112
+            L165 81
+            Z
+            "
+        />
+
+        <!-- Engine -->
+        <ellipse
+            class="jet-engine"
+            cx="38"
+            cy="70"
+            rx="25"
+            ry="12"
+        />
+
+        <!-- Cockpit -->
+        <path
+            class="jet-cockpit"
+            d="
+            M176 59
+            L205 63
+            L190 52
+            L176 59
+            Z
+            "
+        />
+
+        <!-- Cockpit highlight -->
+        <path
+            class="jet-highlight"
+            d="
+            M184 58
+            L197 61
+            L190 55
+            Z
+            "
+        />
+
+        <!-- Wing highlight -->
+        <path
+            class="jet-highlight"
+            d="
+            M165 60
+            L102 22
+            L115 60
+            Z
+            "
+        />
+
+        <!-- Body highlight -->
+        <path
+            class="jet-highlight"
+            d="
+            M45 68
+            L200 60
+            L235 70
+            L200 66
+            Z
+            "
+        />
+
+    </svg>
+
+</div>
+
+
+<!-- =======================================================
+     NAVIGATION
+======================================================= -->
 
 <nav>
+
     <div class="nav-container">
-        <div class="logo">Aero<span>Rohan</span></div>
+
+        <div class="logo">
+            Aero<span>Rohan</span>
+        </div>
 
         <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#research">Research</a></li>
-            <li><a href="#contact">Contact</a></li>
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#experience">Experience</a>
+            </li>
+
+            <li>
+                <a href="#research">Research</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
         </ul>
+
     </div>
+
 </nav>
 
 
-<!-- HERO -->
+<!-- =======================================================
+     HERO
+======================================================= -->
+
+<main>
 
 <section class="hero">
 
@@ -508,23 +1429,38 @@
         </div>
 
         <h1>
-            Hi, I'm <span>Rohan</span>.<br>
-            I build & simulate engineering systems.
+            Hi, I'm
+            <span>Rohan</span>.<br>
+
+            I build & simulate
+            engineering systems.
         </h1>
 
         <p class="hero-subtitle">
-            Aerospace Engineer focused on Computational Fluid Dynamics,
-            Aeroacoustics, CAE and numerical simulation.
+
+            Aerospace Engineer focused on
+            Computational Fluid Dynamics,
+            Aeroacoustics, CAE and numerical
+            simulation.
+
         </p>
 
         <div class="hero-buttons">
 
-            <a href="#projects" class="btn btn-primary">
+            <a
+                href="#projects"
+                class="btn btn-primary">
+
                 View My Projects
+
             </a>
 
-            <a href="#contact" class="btn btn-outline">
+            <a
+                href="#contact"
+                class="btn btn-outline">
+
                 Get In Touch
+
             </a>
 
         </div>
@@ -534,234 +1470,352 @@
 </section>
 
 
-<!-- ABOUT -->
+<!-- =======================================================
+     ABOUT
+======================================================= -->
 
 <section id="about">
 
-    <div class="container">
+<div class="container">
 
-        <div class="section-label">01 — About Me</div>
+    <div class="section-label">
+        01 — About Me
+    </div>
 
-        <h2 class="section-title">Engineering with simulation.</h2>
+    <h2 class="section-title">
+        Engineering with simulation.
+    </h2>
 
-        <div class="about-grid">
+    <div class="about-grid">
 
-            <div class="about-text">
+        <div class="about-text">
 
-                <p>
-                    I am an Aerospace Engineering postgraduate with a
-                    background in Mechanical Engineering and a strong
-                    interest in computational engineering.
-                </p>
+            <p>
+                I am an Aerospace Engineering
+                postgraduate with a background in
+                Mechanical Engineering and a strong
+                interest in computational engineering.
+            </p>
 
-                <p>
-                    My interests lie at the intersection of aerospace
-                    engineering, fluid mechanics and numerical simulation.
-                    I enjoy using CFD and CAE tools to understand complex
-                    engineering problems and develop practical solutions.
-                </p>
+            <p>
+                My interests lie at the intersection
+                of aerospace engineering, fluid
+                mechanics and numerical simulation.
+                I enjoy using CFD and CAE tools to
+                understand complex engineering
+                problems and develop practical
+                solutions.
+            </p>
 
-                <p>
-                    My current technical interests include supersonic flows,
-                    aeroacoustics, turbomachinery, CFD, FEM and engineering
-                    simulation.
-                </p>
+            <p>
+                My current technical interests include
+                supersonic flows, aeroacoustics,
+                turbomachinery, CFD, FEM and
+                engineering simulation.
+            </p>
 
+        </div>
+
+
+        <div class="about-card">
+
+            <h3>
+                Quick Info
+            </h3>
+
+            <div class="info">
+                <span>Education</span>
+                <span>M.Tech Aerospace</span>
             </div>
 
-            <div class="about-card">
+            <div class="info">
+                <span>Institute</span>
+                <span>IIT Kharagpur</span>
+            </div>
 
-                <h3>Quick Info</h3>
+            <div class="info">
+                <span>Background</span>
+                <span>Mechanical Engineering</span>
+            </div>
 
-                <div class="info">
-                    <span>Education</span>
-                    <span>M.Tech Aerospace</span>
-                </div>
-
-                <div class="info">
-                    <span>Institute</span>
-                    <span>IIT Kharagpur</span>
-                </div>
-
-                <div class="info">
-                    <span>Background</span>
-                    <span>Mechanical Engineering</span>
-                </div>
-
-                <div class="info">
-                    <span>Focus</span>
-                    <span>CFD & CAE</span>
-                </div>
-
+            <div class="info">
+                <span>Focus</span>
+                <span>CFD & CAE</span>
             </div>
 
         </div>
 
     </div>
 
+</div>
+
 </section>
 
 
-<!-- SKILLS -->
+<!-- =======================================================
+     SKILLS
+======================================================= -->
 
 <section id="skills">
 
-    <div class="container">
+<div class="container">
 
-        <div class="section-label">02 — Technical Skills</div>
+    <div class="section-label">
+        02 — Technical Skills
+    </div>
 
-        <h2 class="section-title">Tools & expertise.</h2>
+    <h2 class="section-title">
+        Tools & expertise.
+    </h2>
 
-        <div class="skills-grid">
+    <div class="skills-grid">
 
-            <div class="skill-card">
-                <h3>CFD</h3>
-                <p>
-                    ANSYS Fluent, ANSYS CFX, OpenFOAM,
-                    RANS, LES, DES and compressible flow analysis.
-                </p>
-            </div>
 
-            <div class="skill-card">
-                <h3>Aeroacoustics</h3>
-                <p>
-                    Supersonic jet noise, screech tones,
-                    acoustic pressure fluctuations and FFT analysis.
-                </p>
-            </div>
+        <div class="skill-card">
 
-            <div class="skill-card">
-                <h3>CAE / FEM</h3>
-                <p>
-                    Structural analysis, finite element methods,
-                    engineering simulation and design optimization.
-                </p>
-            </div>
+            <h3>CFD</h3>
 
-            <div class="skill-card">
-                <h3>CAD</h3>
-                <p>
-                    CATIA V5, SolidWorks and AutoCAD for
-                    mechanical and aerospace design.
-                </p>
-            </div>
+            <p>
+                ANSYS Fluent, ANSYS CFX,
+                OpenFOAM, RANS, LES,
+                DES and compressible flow analysis.
+            </p>
 
-            <div class="skill-card">
-                <h3>Programming</h3>
-                <p>
-                    Python, MATLAB and numerical methods
-                    for engineering computation.
-                </p>
-            </div>
+        </div>
 
-            <div class="skill-card">
-                <h3>Engineering Analysis</h3>
-                <p>
-                    Fluid mechanics, aerodynamics, gas dynamics,
-                    turbomachinery and numerical simulation.
-                </p>
-            </div>
+
+        <div class="skill-card">
+
+            <h3>Aeroacoustics</h3>
+
+            <p>
+                Supersonic jet noise,
+                screech tones, acoustic pressure
+                fluctuations and FFT analysis.
+            </p>
+
+        </div>
+
+
+        <div class="skill-card">
+
+            <h3>CAE / FEM</h3>
+
+            <p>
+                Structural analysis,
+                finite element methods,
+                engineering simulation and
+                design optimization.
+            </p>
+
+        </div>
+
+
+        <div class="skill-card">
+
+            <h3>CAD</h3>
+
+            <p>
+                CATIA V5, SolidWorks and AutoCAD
+                for mechanical and aerospace design.
+            </p>
+
+        </div>
+
+
+        <div class="skill-card">
+
+            <h3>Programming</h3>
+
+            <p>
+                Python, MATLAB and numerical
+                methods for engineering computation.
+            </p>
+
+        </div>
+
+
+        <div class="skill-card">
+
+            <h3>Engineering Analysis</h3>
+
+            <p>
+                Fluid mechanics, aerodynamics,
+                gas dynamics, turbomachinery
+                and numerical simulation.
+            </p>
 
         </div>
 
     </div>
 
+</div>
+
 </section>
 
 
-<!-- PROJECTS -->
+<!-- =======================================================
+     PROJECTS
+======================================================= -->
 
 <section id="projects" class="projects">
 
-    <div class="container">
+<div class="container">
 
-        <div class="section-label">03 — Featured Projects</div>
+    <div class="section-label">
+        03 — Featured Projects
+    </div>
 
-        <h2 class="section-title">Selected engineering work.</h2>
+    <h2 class="section-title">
+        Selected engineering work.
+    </h2>
 
-        <div class="project-grid">
+    <div class="project-grid">
 
-            <div class="project-card">
 
-                <div class="project-number">PROJECT 01</div>
+        <div class="project-card">
 
-                <h3>Supersonic Jet Aeroacoustics</h3>
+            <div class="project-number">
+                PROJECT 01
+            </div>
 
-                <p>
-                    CFD investigation of a supersonic convergent-divergent
-                    nozzle with focus on shock-cell structure, acoustic
-                    pressure fluctuations and screech-tone prediction.
-                </p>
+            <h3>
+                Supersonic Jet Aeroacoustics
+            </h3>
 
-                <div class="tags">
-                    <span class="tag">ANSYS Fluent</span>
-                    <span class="tag">DES</span>
-                    <span class="tag">LES</span>
-                    <span class="tag">Aeroacoustics</span>
-                </div>
+            <p>
+                CFD investigation of a supersonic
+                convergent-divergent nozzle with
+                focus on shock-cell structure,
+                acoustic pressure fluctuations and
+                screech-tone prediction.
+            </p>
+
+            <div class="tags">
+
+                <span class="tag">
+                    ANSYS Fluent
+                </span>
+
+                <span class="tag">
+                    DES
+                </span>
+
+                <span class="tag">
+                    LES
+                </span>
+
+                <span class="tag">
+                    Aeroacoustics
+                </span>
 
             </div>
 
+        </div>
 
-            <div class="project-card">
 
-                <div class="project-number">PROJECT 02</div>
+        <div class="project-card">
 
-                <h3>Turbopump CFD Analysis</h3>
+            <div class="project-number">
+                PROJECT 02
+            </div>
 
-                <p>
-                    Computational investigation of centrifugal turbopump
-                    performance with emphasis on impeller flow behaviour
-                    and surface roughness effects.
-                </p>
+            <h3>
+                Turbopump CFD Analysis
+            </h3>
 
-                <div class="tags">
-                    <span class="tag">ANSYS CFX</span>
-                    <span class="tag">Turbomachinery</span>
-                    <span class="tag">CFD</span>
-                </div>
+            <p>
+                Computational investigation of
+                centrifugal turbopump performance
+                with emphasis on impeller flow
+                behaviour and surface roughness effects.
+            </p>
+
+            <div class="tags">
+
+                <span class="tag">
+                    ANSYS CFX
+                </span>
+
+                <span class="tag">
+                    Turbomachinery
+                </span>
+
+                <span class="tag">
+                    CFD
+                </span>
 
             </div>
 
+        </div>
 
-            <div class="project-card">
 
-                <div class="project-number">PROJECT 03</div>
+        <div class="project-card">
 
-                <h3>BAJA ATV Design & Analysis</h3>
+            <div class="project-number">
+                PROJECT 03
+            </div>
 
-                <p>
-                    Design and structural analysis of an SAE BAJA ATV
-                    roll cage with focus on strength, manufacturability
-                    and mechanical design.
-                </p>
+            <h3>
+                BAJA ATV Design & Analysis
+            </h3>
 
-                <div class="tags">
-                    <span class="tag">CATIA V5</span>
-                    <span class="tag">ANSYS</span>
-                    <span class="tag">FEM</span>
-                </div>
+            <p>
+                Design and structural analysis of
+                an SAE BAJA ATV roll cage with focus
+                on strength, manufacturability and
+                mechanical design.
+            </p>
+
+            <div class="tags">
+
+                <span class="tag">
+                    CATIA V5
+                </span>
+
+                <span class="tag">
+                    ANSYS
+                </span>
+
+                <span class="tag">
+                    FEM
+                </span>
 
             </div>
 
+        </div>
 
-            <div class="project-card">
 
-                <div class="project-number">PROJECT 04</div>
+        <div class="project-card">
 
-                <h3>Glidrone</h3>
+            <div class="project-number">
+                PROJECT 04
+            </div>
 
-                <p>
-                    Conceptual design of a drone incorporating glider-like
-                    aerodynamic characteristics for improved flight
-                    performance.
-                </p>
+            <h3>
+                Glidrone
+            </h3>
 
-                <div class="tags">
-                    <span class="tag">Aerospace Design</span>
-                    <span class="tag">CAD</span>
-                    <span class="tag">Aerodynamics</span>
-                </div>
+            <p>
+                Conceptual design of a drone
+                incorporating glider-like aerodynamic
+                characteristics for improved flight
+                performance.
+            </p>
+
+            <div class="tags">
+
+                <span class="tag">
+                    Aerospace Design
+                </span>
+
+                <span class="tag">
+                    CAD
+                </span>
+
+                <span class="tag">
+                    Aerodynamics
+                </span>
 
             </div>
 
@@ -769,185 +1823,743 @@
 
     </div>
 
+</div>
+
 </section>
 
 
-<!-- EXPERIENCE -->
+<!-- =======================================================
+     EXPERIENCE
+======================================================= -->
 
 <section id="experience">
 
-    <div class="container">
+<div class="container">
 
-        <div class="section-label">04 — Experience</div>
+    <div class="section-label">
+        04 — Experience
+    </div>
 
-        <h2 class="section-title">My engineering journey.</h2>
+    <h2 class="section-title">
+        My engineering journey.
+    </h2>
 
-        <div class="timeline">
+    <div class="timeline">
 
-            <div class="timeline-item">
 
-                <h3>M.Tech — Aerospace Engineering</h3>
+        <div class="timeline-item">
 
-                <div class="company">
-                    IIT Kharagpur
-                </div>
+            <h3>
+                M.Tech — Aerospace Engineering
+            </h3>
 
-                <div class="date">
-                    Aerospace Engineering
-                </div>
-
-                <p>
-                    Advanced studies and research in aerospace engineering,
-                    CFD, aerodynamics and computational simulation.
-                </p>
-
+            <div class="company">
+                IIT Kharagpur
             </div>
 
-
-            <div class="timeline-item">
-
-                <h3>Graduate Engineering Trainee</h3>
-
-                <div class="company">
-                    Atlas Copco
-                </div>
-
-                <div class="date">
-                    Engineering Experience
-                </div>
-
-                <p>
-                    Worked in an industrial engineering environment,
-                    gaining exposure to engineering processes,
-                    technical documentation and product development.
-                </p>
-
+            <div class="date">
+                Aerospace Engineering
             </div>
 
+            <p>
+                Advanced studies and research in
+                aerospace engineering, CFD,
+                aerodynamics and computational
+                simulation.
+            </p>
 
-            <div class="timeline-item">
+        </div>
 
-                <h3>Engineering Intern</h3>
 
-                <div class="company">
-                    ISRO LPSC
-                </div>
+        <div class="timeline-item">
 
-                <div class="date">
-                    Valiamala
-                </div>
+            <h3>
+                Graduate Engineering Trainee
+            </h3>
 
-                <p>
-                    Internship experience in a research-oriented
-                    aerospace environment.
-                </p>
-
+            <div class="company">
+                Atlas Copco
             </div>
+
+            <div class="date">
+                Engineering Experience
+            </div>
+
+            <p>
+                Worked in an industrial engineering
+                environment, gaining exposure to
+                engineering processes, technical
+                documentation and product development.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <h3>
+                Engineering Intern
+            </h3>
+
+            <div class="company">
+                ISRO LPSC
+            </div>
+
+            <div class="date">
+                Valiamala
+            </div>
+
+            <p>
+                Internship experience in a
+                research-oriented aerospace
+                environment.
+            </p>
 
         </div>
 
     </div>
 
+</div>
+
 </section>
 
 
-<!-- RESEARCH -->
+<!-- =======================================================
+     RESEARCH
+======================================================= -->
 
 <section id="research">
 
-    <div class="container">
+<div class="container">
 
-        <div class="section-label">05 — Research</div>
+    <div class="section-label">
+        05 — Research
+    </div>
 
-        <h2 class="section-title">Areas I'm exploring.</h2>
+    <h2 class="section-title">
+        Areas I'm exploring.
+    </h2>
 
-        <div class="research-box">
+    <div class="research-box">
 
-            <p>
-                My research interests are focused on computational
-                aerospace engineering and the application of CFD and
-                numerical methods to complex engineering problems.
-            </p>
+        <p>
+            My research interests are focused on
+            computational aerospace engineering
+            and the application of CFD and numerical
+            methods to complex engineering problems.
+        </p>
 
-            <div class="research-list">
+        <div class="research-list">
 
-                <div>Supersonic & compressible flows</div>
+            <div>
+                Supersonic & compressible flows
+            </div>
 
-                <div>Jet aeroacoustics</div>
+            <div>
+                Jet aeroacoustics
+            </div>
 
-                <div>Screech-tone mitigation</div>
+            <div>
+                Screech-tone mitigation
+            </div>
 
-                <div>CFD & turbulence modelling</div>
+            <div>
+                CFD & turbulence modelling
+            </div>
 
-                <div>Turbomachinery CFD</div>
+            <div>
+                Turbomachinery CFD
+            </div>
 
-                <div>Numerical methods</div>
+            <div>
+                Numerical methods
+            </div>
 
-                <div>FEM & structural analysis</div>
+            <div>
+                FEM & structural analysis
+            </div>
 
-                <div>Aerospace propulsion</div>
-
+            <div>
+                Aerospace propulsion
             </div>
 
         </div>
 
     </div>
 
+</div>
+
 </section>
 
 
-<!-- CONTACT -->
+<!-- =======================================================
+     CONTACT
+======================================================= -->
 
 <section id="contact" class="contact">
 
-    <div class="container">
+<div class="container">
 
-        <div class="section-label">06 — Contact</div>
+    <div class="section-label">
+        06 — Contact
+    </div>
 
-        <h2 class="section-title">Let's connect.</h2>
+    <h2 class="section-title">
+        Let's connect.
+    </h2>
 
-        <p>
-            I'm interested in aerospace engineering, CFD, CAE,
-            simulation and research opportunities. Feel free to
-            connect with me.
-        </p>
+    <p>
+        I'm interested in aerospace engineering,
+        CFD, CAE, simulation and research
+        opportunities. Feel free to connect with me.
+    </p>
 
-        <div class="socials">
+    <div class="socials">
 
-            <a
-                href="https://github.com/Ae-Rohan"
-                target="_blank"
-                class="btn btn-outline">
-                GitHub
-            </a>
 
-            <a
-                href="https://www.linkedin.com/"
-                target="_blank"
-                class="btn btn-outline">
-                LinkedIn
-            </a>
+        <a
+            href="https://github.com/Ae-Rohan"
+            target="_blank"
+            class="btn btn-outline">
 
-            <a
-                href="mailto:your-email@example.com"
-                class="btn btn-primary">
-                Email Me
-            </a>
+            GitHub
 
-        </div>
+        </a>
+
+
+        <a
+            href="https://www.linkedin.com/"
+            target="_blank"
+            class="btn btn-outline">
+
+            LinkedIn
+
+        </a>
+
+
+        <a
+            href="mailto:your-email@example.com"
+            class="btn btn-primary">
+
+            Email Me
+
+        </a>
+
 
     </div>
 
+</div>
+
 </section>
 
+</main>
 
-<!-- FOOTER -->
+
+<!-- =======================================================
+     FOOTER
+======================================================= -->
 
 <footer>
 
-    © 2026 Rohan Salunkhe · Aerospace Engineering & Computational Simulation
+    © 2026 Rohan Salunkhe ·
+    Aerospace Engineering & Computational Simulation
 
 </footer>
+
+
+<!-- =======================================================
+     JAVASCRIPT
+======================================================= -->
+
+<script>
+
+/* =========================================================
+   FIGHTER JET SCROLL ANIMATION
+========================================================= */
+
+const jet =
+    document.getElementById("fighterJet");
+
+const canvas =
+    document.getElementById("spaceCanvas");
+
+const ctx =
+    canvas.getContext("2d");
+
+
+let width =
+    window.innerWidth;
+
+let height =
+    window.innerHeight;
+
+
+let scrollY =
+    window.scrollY;
+
+let lastScrollY =
+    window.scrollY;
+
+let scrollVelocity =
+    0;
+
+
+/* Jet state */
+
+let jetX =
+    -380;
+
+let jetY =
+    height * 0.25;
+
+let jetRotation =
+    -6;
+
+
+/* Target state */
+
+let targetX =
+    jetX;
+
+let targetY =
+    jetY;
+
+let targetRotation =
+    jetRotation;
+
+
+/* =========================================================
+   CANVAS RESIZE
+========================================================= */
+
+function resizeCanvas() {
+
+    width =
+        window.innerWidth;
+
+    height =
+        window.innerHeight;
+
+    canvas.width =
+        width;
+
+    canvas.height =
+        height;
+
+}
+
+resizeCanvas();
+
+window.addEventListener(
+    "resize",
+    resizeCanvas
+);
+
+
+/* =========================================================
+   PARTICLE SYSTEM
+========================================================= */
+
+const particles = [];
+
+const particleCount =
+    window.innerWidth < 700
+        ? 45
+        : 90;
+
+
+for (
+    let i = 0;
+    i < particleCount;
+    i++
+) {
+
+    particles.push({
+
+        x:
+            Math.random() * width,
+
+        y:
+            Math.random() * height,
+
+        size:
+            Math.random() * 1.8 + 0.3,
+
+        speed:
+            Math.random() * 0.35 + 0.08,
+
+        opacity:
+            Math.random() * 0.6 + 0.15
+
+    });
+
+}
+
+
+/* =========================================================
+   DRAW PARTICLES
+========================================================= */
+
+function drawParticles() {
+
+    ctx.clearRect(
+        0,
+        0,
+        width,
+        height
+    );
+
+    for (
+        const p of particles
+    ) {
+
+        p.y -= p.speed;
+
+        if (p.y < -5) {
+
+            p.y =
+                height + 5;
+
+            p.x =
+                Math.random() * width;
+
+        }
+
+        ctx.beginPath();
+
+        ctx.arc(
+            p.x,
+            p.y,
+            p.size,
+            0,
+            Math.PI * 2
+        );
+
+        ctx.fillStyle =
+            `rgba(125,211,252,${p.opacity})`;
+
+        ctx.fill();
+
+    }
+
+}
+
+
+/* =========================================================
+   SCROLL HANDLER
+========================================================= */
+
+window.addEventListener(
+    "scroll",
+    () => {
+
+        scrollY =
+            window.scrollY;
+
+        scrollVelocity =
+            scrollY -
+            lastScrollY;
+
+        lastScrollY =
+            scrollY;
+
+
+        const maxScroll =
+            document.documentElement
+                .scrollHeight -
+            window.innerHeight;
+
+
+        const progress =
+            maxScroll > 0
+                ? scrollY / maxScroll
+                : 0;
+
+
+        /*
+         * Four flight passes.
+         */
+
+        const flightCycles =
+            progress * 4;
+
+
+        const cycleIndex =
+            Math.floor(flightCycles);
+
+
+        const phase =
+            flightCycles -
+            cycleIndex;
+
+
+        /*
+         * Alternating direction.
+         */
+
+        const flyingRight =
+            cycleIndex % 2 === 0;
+
+
+        if (flyingRight) {
+
+            targetX =
+                -380 +
+                phase *
+                (width + 760);
+
+            targetRotation =
+                -5;
+
+        } else {
+
+            targetX =
+                width + 380 -
+                phase *
+                (width + 760);
+
+            targetRotation =
+                5;
+
+        }
+
+
+        /*
+         * Vertical flight path.
+         */
+
+        const wave =
+            Math.sin(
+                progress *
+                Math.PI *
+                4
+            );
+
+
+        targetY =
+            height *
+            (
+                0.28 +
+                wave * 0.25
+            );
+
+
+        /*
+         * Banking based on
+         * scroll direction.
+         */
+
+        if (scrollVelocity > 0) {
+
+            targetRotation += 4;
+
+        }
+
+        if (scrollVelocity < 0) {
+
+            targetRotation -= 4;
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   SMOOTH JET ANIMATION
+========================================================= */
+
+function animateJet() {
+
+    /*
+     * Smooth interpolation.
+     */
+
+    jetX +=
+        (targetX - jetX)
+        * 0.075;
+
+
+    jetY +=
+        (targetY - jetY)
+        * 0.075;
+
+
+    jetRotation +=
+        (targetRotation - jetRotation)
+        * 0.075;
+
+
+    /*
+     * Extra vertical movement
+     * from scroll velocity.
+     */
+
+    const velocityLift =
+        Math.max(
+            -12,
+            Math.min(
+                12,
+                scrollVelocity * 0.8
+            )
+        );
+
+
+    jet.style.transform =
+        `
+        translate3d(
+            ${jetX}px,
+            ${jetY + velocityLift}px,
+            0
+        )
+        rotate(${jetRotation}deg)
+        `;
+
+
+    /*
+     * Gradually reduce velocity.
+     */
+
+    scrollVelocity *= 0.88;
+
+
+    requestAnimationFrame(
+        animateJet
+    );
+
+}
+
+animateJet();
+
+
+/* =========================================================
+   PARTICLE ANIMATION
+========================================================= */
+
+function animateParticles() {
+
+    drawParticles();
+
+    requestAnimationFrame(
+        animateParticles
+    );
+
+}
+
+animateParticles();
+
+
+/* =========================================================
+   MOUSE PARALLAX
+========================================================= */
+
+let mouseX = 0;
+let mouseY = 0;
+
+window.addEventListener(
+    "mousemove",
+    (event) => {
+
+        mouseX =
+            (
+                event.clientX /
+                window.innerWidth -
+                0.5
+            );
+
+        mouseY =
+            (
+                event.clientY /
+                window.innerHeight -
+                0.5
+            );
+
+        const grid =
+            document.querySelector(
+                ".space-grid"
+            );
+
+        if (grid) {
+
+            grid.style.transform =
+                `
+                perspective(500px)
+                rotateX(58deg)
+                translate(
+                    ${mouseX * 10}px,
+                    ${mouseY * 10}px
+                )
+                scale(1.7)
+                `;
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   SMOOTH NAVIGATION
+========================================================= */
+
+document
+    .querySelectorAll(
+        'a[href^="#"]'
+    )
+    .forEach(
+        link => {
+
+            link.addEventListener(
+                "click",
+                function(event) {
+
+                    const target =
+                        document.querySelector(
+                            this.getAttribute("href")
+                        );
+
+                    if (!target)
+                        return;
+
+                    event.preventDefault();
+
+                    target.scrollIntoView({
+                        behavior: "smooth"
+                    });
+
+                }
+            );
+
+        }
+    );
+
+
+/* =========================================================
+   PAGE VISIBILITY
+========================================================= */
+
+document.addEventListener(
+    "visibilitychange",
+    () => {
+
+        if (
+            document.hidden
+        ) {
+
+            canvas.style.opacity =
+                "0";
+
+        } else {
+
+            canvas.style.opacity =
+                "0.65";
+
+        }
+
+    }
+);
+
+</script>
 
 
 </body>
