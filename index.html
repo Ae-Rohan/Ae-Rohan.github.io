@@ -24,13 +24,13 @@ content="Rohan Salunkhe — Aerospace Engineer specializing in CFD, CAE, Aeroaco
 }
 
 :root {
-    --bg: #100b07;
-    --bg2: #1a1009;
-    --card: rgba(38, 25, 16, 0.78);
-    --text: #fff8ef;
-    --muted: #c8b7a5;
-    --accent: #ffb15c;
-    --accent2: #ffd08a;
+    --bg: #030914;
+    --bg2: #06111f;
+    --card: rgba(10, 25, 43, 0.78);
+    --text: #f5f9ff;
+    --muted: #9eafc2;
+    --accent: #55b8ff;
+    --accent2: #8bd8ff;
     --border: rgba(255,255,255,0.10);
     --max-width: 1180px;
 }
@@ -52,12 +52,12 @@ body {
     background:
         radial-gradient(
             circle at 80% 10%,
-            rgba(255,145,45,0.12),
+            rgba(35,130,210,0.12),
             transparent 35%
         ),
         radial-gradient(
             circle at 10% 70%,
-            rgba(220,105,25,0.08),
+            rgba(20,100,180,0.08),
             transparent 30%
         ),
         var(--bg);
@@ -96,12 +96,12 @@ a {
 
     background-image:
         linear-gradient(
-            rgba(255,177,92,0.08) 1px,
+            rgba(85,184,255,0.08) 1px,
             transparent 1px
         ),
         linear-gradient(
             90deg,
-            rgba(255,177,92,0.08) 1px,
+            rgba(85,184,255,0.08) 1px,
             transparent 1px
         );
 
@@ -126,7 +126,7 @@ a {
     background:
         radial-gradient(
             circle,
-            rgba(255,161,67,0.10),
+            rgba(85,184,255,0.09),
             transparent 70%
         );
 
@@ -295,6 +295,55 @@ section {
     max-width: var(--max-width);
 
     margin: auto;
+
+    position: relative;
+    z-index: 6;
+}
+
+.hero-visuals {
+    position: absolute;
+    inset: 72px 0 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.afterburner-photo {
+    position: absolute;
+    left: -90px;
+    bottom: 55px;
+    width: 48%;
+    max-width: 560px;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.32;
+    border-radius: 14px;
+    border: 1px solid rgba(85,184,255,0.18);
+    filter: saturate(0.9) contrast(1.05);
+}
+
+.profile-photo {
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+    width: 290px;
+    height: 360px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 16px 16px 0 0;
+    border: 1px solid rgba(85,184,255,0.28);
+    box-shadow: 0 18px 60px rgba(0,0,0,0.35);
+}
+
+.iitkgp-logo {
+    position: absolute;
+    right: 280px;
+    top: 20px;
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    opacity: 0.10;
+    filter: brightness(1.4) saturate(0.8);
 }
 
 .hero-tag {
@@ -307,6 +356,9 @@ section {
     text-transform: uppercase;
 
     margin-bottom: 22px;
+
+    position: relative;
+    z-index: 7;
 }
 
 .hero h1 {
@@ -320,6 +372,9 @@ section {
     max-width: 1000px;
 
     margin-bottom: 28px;
+
+    position: relative;
+    z-index: 7;
 }
 
 .hero h1 span {
@@ -335,6 +390,9 @@ section {
         clamp(18px, 2vw, 22px);
 
     margin-bottom: 38px;
+
+    position: relative;
+    z-index: 7;
 }
 
 .hero-buttons {
@@ -343,6 +401,9 @@ section {
     gap: 14px;
 
     flex-wrap: wrap;
+
+    position: relative;
+    z-index: 7;
 }
 
 .btn {
@@ -857,16 +918,16 @@ footer {
     pointer-events: none;
 
     color:
-        rgba(255,190,110,0.24);
+            rgba(155,220,255,0.22);
 
     filter:
         drop-shadow(
             0 0 10px
-            rgba(255,170,80,0.45)
+            rgba(85,184,255,0.40)
         )
         drop-shadow(
             0 0 35px
-            rgba(255,145,45,0.20)
+            rgba(85,184,255,0.18)
         );
 
     transform:
@@ -903,18 +964,18 @@ footer {
 }
 
 .jet-highlight {
-    fill:
-        rgba(255,236,210,0.34);
+        fill:
+        rgba(225,245,255,0.30);
 }
 
 .jet-cockpit {
-    fill:
-        rgba(255,188,105,0.48);
+        fill:
+        rgba(100,190,240,0.45);
 }
 
 .jet-engine {
-    fill:
-        rgba(105,55,20,0.78);
+        fill:
+        rgba(30,80,115,0.75);
 }
 
 
@@ -1011,7 +1072,7 @@ footer {
     transform:
         rotate(-2deg);
 
-    opacity: 0.6;
+        opacity: 0.6;
 }
 
 
@@ -1070,6 +1131,34 @@ footer {
 ========================================================= */
 
 @media(max-width:800px) {
+
+    .hero-visuals {
+        inset: 64px 0 0;
+    }
+
+    .afterburner-photo {
+        left: -80px;
+        bottom: 80px;
+        width: 75%;
+        height: 220px;
+        opacity: 0.18;
+    }
+
+    .profile-photo {
+        right: -35px;
+        bottom: 0;
+        width: 180px;
+        height: 235px;
+        opacity: 0.9;
+    }
+
+    .iitkgp-logo {
+        right: 130px;
+        top: 35px;
+        width: 110px;
+        height: 110px;
+        opacity: 0.08;
+    }
 
     .nav-links {
         display: none;
@@ -1423,6 +1512,26 @@ footer {
 <section class="hero">
 
 <div class="hero-container">
+
+    <div class="hero-visuals" aria-hidden="true">
+        <img
+            class="afterburner-photo"
+            src="afterburner.jpg"
+            alt=""
+        >
+
+        <img
+            class="iitkgp-logo"
+            src="iitkgp-logo.png"
+            alt=""
+        >
+
+        <img
+            class="profile-photo"
+            src="rohan.jpg"
+            alt=""
+        >
+    </div>
 
     <div class="hero-tag">
         Aerospace Engineering • CFD • CAE
