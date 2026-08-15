@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rohan Salunkhe | Aerospace Engineer</title>
+
+    <meta name="description"
+          content="Rohan Salunkhe — Aerospace Engineer specializing in CFD, CAE, Aeroacoustics and Engineering Simulation.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --bg: #07111f;
+            --bg2: #0b1728;
+            --card: #0f1d30;
+            --text: #f3f7fb;
+            --muted: #9eacbd;
+            --accent: #55b8ff;
+            --accent2: #7dd3fc;
+            --border: rgba(255,255,255,0.10);
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            backdrop-filter: blur(12px);
+            background: rgba(7,17,31,0.82);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-container {
+            max-width: 1150px;
+            margin: auto;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 25px;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 100px 25px 60px;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: rgba(45, 160, 255, 0.12);
+            border-radius: 50%;
+            filter: blur(100px);
+            top: 10%;
+            right: 5%;
+        }
+
+        .hero-container {
+            max-width: 1150px;
+            width: 100%;
+            margin: auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-tag {
+            color: var(--accent);
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 7vw, 82px);
+            line-height: 1.05;
+            max-width: 900px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero-subtitle {
+            font-size: 22px;
+            color: var(--muted);
+            max-width: 750px;
+            margin-bottom: 35px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 13px 23px;
+            border-radius: 7px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.3s;
+            border: 1px solid var(--border);
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: #06101d;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            background: var(--accent2);
+        }
+
+        .btn-outline {
+            color: var(--text);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* GENERAL */
+
+        section {
+            padding: 100px 25px;
+        }
+
+        .container {
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        .section-label {
+            color: var(--accent);
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            font-size: 38px;
+            margin-bottom: 45px;
+        }
+
+        /* ABOUT */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .about-text {
+            color: var(--muted);
+            font-size: 17px;
+        }
+
+        .about-text p {
+            margin-bottom: 18px;
+        }
+
+        .about-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+        }
+
+        .about-card h3 {
+            margin-bottom: 20px;
+        }
+
+        .info {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 14px;
+        }
+
+        .info:last-child {
+            border-bottom: none;
+        }
+
+        .info span:first-child {
+            color: var(--muted);
+        }
+
+        /* SKILLS */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .skill-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 25px;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(85,184,255,0.5);
+        }
+
+        .skill-card h3 {
+            margin-bottom: 12px;
+            color: var(--accent);
+        }
+
+        .skill-card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* PROJECTS */
+
+        .projects {
+            background: var(--bg2);
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+        }
+
+        .project-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 30px;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(85,184,255,0.5);
+        }
+
+        .project-number {
+            color: var(--accent);
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        .project-card h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            color: var(--muted);
+            font-size: 15px;
+            margin-bottom: 18px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            font-size: 12px;
+            padding: 5px 10px;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            color: var(--accent2);
+        }
+
+        /* EXPERIENCE */
+
+        .timeline {
+            border-left: 1px solid var(--border);
+            margin-left: 10px;
+        }
+
+        .timeline-item {
+            padding: 0 0 40px 35px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            background: var(--accent);
+            left: -6px;
+            top: 6px;
+        }
+
+        .timeline-item h3 {
+            font-size: 21px;
+        }
+
+        .timeline-item .company {
+            color: var(--accent);
+            margin: 5px 0;
+        }
+
+        .timeline-item .date {
+            color: var(--muted);
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        .timeline-item p {
+            color: var(--muted);
+        }
+
+        /* RESEARCH */
+
+        .research-box {
+            background: linear-gradient(
+                135deg,
+                rgba(85,184,255,0.12),
+                rgba(125,211,252,0.03)
+            );
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 40px;
+        }
+
+        .research-box p {
+            color: var(--muted);
+            max-width: 850px;
+            font-size: 17px;
+        }
+
+        .research-list {
+            margin-top: 25px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px 30px;
+        }
+
+        .research-list div {
+            color: var(--text);
+        }
+
+        .research-list div::before {
+            content: "→ ";
+            color: var(--accent);
+        }
+
+        /* CONTACT */
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            color: var(--muted);
+            max-width: 650px;
+            margin: 0 auto 30px;
+        }
+
+        .socials {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        /* FOOTER */
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 25px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .about-grid,
+            .skills-grid,
+            .project-grid,
+            .research-list {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .hero-subtitle {
+                font-size: 18px;
+            }
+
+            section {
+                padding: 75px 20px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+    <div class="nav-container">
+        <div class="logo">Aero<span>Rohan</span></div>
+
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-container">
+
+        <div class="hero-tag">
+            Aerospace Engineering • CFD • CAE
+        </div>
+
+        <h1>
+            Hi, I'm <span>Rohan</span>.<br>
+            I build & simulate engineering systems.
+        </h1>
+
+        <p class="hero-subtitle">
+            Aerospace Engineer focused on Computational Fluid Dynamics,
+            Aeroacoustics, CAE and numerical simulation.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#projects" class="btn btn-primary">
+                View My Projects
+            </a>
+
+            <a href="#contact" class="btn btn-outline">
+                Get In Touch
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-label">01 — About Me</div>
+
+        <h2 class="section-title">Engineering with simulation.</h2>
+
+        <div class="about-grid">
+
+            <div class="about-text">
+
+                <p>
+                    I am an Aerospace Engineering postgraduate with a
+                    background in Mechanical Engineering and a strong
+                    interest in computational engineering.
+                </p>
+
+                <p>
+                    My interests lie at the intersection of aerospace
+                    engineering, fluid mechanics and numerical simulation.
+                    I enjoy using CFD and CAE tools to understand complex
+                    engineering problems and develop practical solutions.
+                </p>
+
+                <p>
+                    My current technical interests include supersonic flows,
+                    aeroacoustics, turbomachinery, CFD, FEM and engineering
+                    simulation.
+                </p>
+
+            </div>
+
+            <div class="about-card">
+
+                <h3>Quick Info</h3>
+
+                <div class="info">
+                    <span>Education</span>
+                    <span>M.Tech Aerospace</span>
+                </div>
+
+                <div class="info">
+                    <span>Institute</span>
+                    <span>IIT Kharagpur</span>
+                </div>
+
+                <div class="info">
+                    <span>Background</span>
+                    <span>Mechanical Engineering</span>
+                </div>
+
+                <div class="info">
+                    <span>Focus</span>
+                    <span>CFD & CAE</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+    <div class="container">
+
+        <div class="section-label">02 — Technical Skills</div>
+
+        <h2 class="section-title">Tools & expertise.</h2>
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+                <h3>CFD</h3>
+                <p>
+                    ANSYS Fluent, ANSYS CFX, OpenFOAM,
+                    RANS, LES, DES and compressible flow analysis.
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Aeroacoustics</h3>
+                <p>
+                    Supersonic jet noise, screech tones,
+                    acoustic pressure fluctuations and FFT analysis.
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>CAE / FEM</h3>
+                <p>
+                    Structural analysis, finite element methods,
+                    engineering simulation and design optimization.
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>CAD</h3>
+                <p>
+                    CATIA V5, SolidWorks and AutoCAD for
+                    mechanical and aerospace design.
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Programming</h3>
+                <p>
+                    Python, MATLAB and numerical methods
+                    for engineering computation.
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Engineering Analysis</h3>
+                <p>
+                    Fluid mechanics, aerodynamics, gas dynamics,
+                    turbomachinery and numerical simulation.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section id="projects" class="projects">
+
+    <div class="container">
+
+        <div class="section-label">03 — Featured Projects</div>
+
+        <h2 class="section-title">Selected engineering work.</h2>
+
+        <div class="project-grid">
+
+            <div class="project-card">
+
+                <div class="project-number">PROJECT 01</div>
+
+                <h3>Supersonic Jet Aeroacoustics</h3>
+
+                <p>
+                    CFD investigation of a supersonic convergent-divergent
+                    nozzle with focus on shock-cell structure, acoustic
+                    pressure fluctuations and screech-tone prediction.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">ANSYS Fluent</span>
+                    <span class="tag">DES</span>
+                    <span class="tag">LES</span>
+                    <span class="tag">Aeroacoustics</span>
+                </div>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <div class="project-number">PROJECT 02</div>
+
+                <h3>Turbopump CFD Analysis</h3>
+
+                <p>
+                    Computational investigation of centrifugal turbopump
+                    performance with emphasis on impeller flow behaviour
+                    and surface roughness effects.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">ANSYS CFX</span>
+                    <span class="tag">Turbomachinery</span>
+                    <span class="tag">CFD</span>
+                </div>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <div class="project-number">PROJECT 03</div>
+
+                <h3>BAJA ATV Design & Analysis</h3>
+
+                <p>
+                    Design and structural analysis of an SAE BAJA ATV
+                    roll cage with focus on strength, manufacturability
+                    and mechanical design.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">CATIA V5</span>
+                    <span class="tag">ANSYS</span>
+                    <span class="tag">FEM</span>
+                </div>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <div class="project-number">PROJECT 04</div>
+
+                <h3>Glidrone</h3>
+
+                <p>
+                    Conceptual design of a drone incorporating glider-like
+                    aerodynamic characteristics for improved flight
+                    performance.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">Aerospace Design</span>
+                    <span class="tag">CAD</span>
+                    <span class="tag">Aerodynamics</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EXPERIENCE -->
+
+<section id="experience">
+
+    <div class="container">
+
+        <div class="section-label">04 — Experience</div>
+
+        <h2 class="section-title">My engineering journey.</h2>
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <h3>M.Tech — Aerospace Engineering</h3>
+
+                <div class="company">
+                    IIT Kharagpur
+                </div>
+
+                <div class="date">
+                    Aerospace Engineering
+                </div>
+
+                <p>
+                    Advanced studies and research in aerospace engineering,
+                    CFD, aerodynamics and computational simulation.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <h3>Graduate Engineering Trainee</h3>
+
+                <div class="company">
+                    Atlas Copco
+                </div>
+
+                <div class="date">
+                    Engineering Experience
+                </div>
+
+                <p>
+                    Worked in an industrial engineering environment,
+                    gaining exposure to engineering processes,
+                    technical documentation and product development.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <h3>Engineering Intern</h3>
+
+                <div class="company">
+                    ISRO LPSC
+                </div>
+
+                <div class="date">
+                    Valiamala
+                </div>
+
+                <p>
+                    Internship experience in a research-oriented
+                    aerospace environment.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- RESEARCH -->
+
+<section id="research">
+
+    <div class="container">
+
+        <div class="section-label">05 — Research</div>
+
+        <h2 class="section-title">Areas I'm exploring.</h2>
+
+        <div class="research-box">
+
+            <p>
+                My research interests are focused on computational
+                aerospace engineering and the application of CFD and
+                numerical methods to complex engineering problems.
+            </p>
+
+            <div class="research-list">
+
+                <div>Supersonic & compressible flows</div>
+
+                <div>Jet aeroacoustics</div>
+
+                <div>Screech-tone mitigation</div>
+
+                <div>CFD & turbulence modelling</div>
+
+                <div>Turbomachinery CFD</div>
+
+                <div>Numerical methods</div>
+
+                <div>FEM & structural analysis</div>
+
+                <div>Aerospace propulsion</div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact" class="contact">
+
+    <div class="container">
+
+        <div class="section-label">06 — Contact</div>
+
+        <h2 class="section-title">Let's connect.</h2>
+
+        <p>
+            I'm interested in aerospace engineering, CFD, CAE,
+            simulation and research opportunities. Feel free to
+            connect with me.
+        </p>
+
+        <div class="socials">
+
+            <a
+                href="https://github.com/Ae-Rohan"
+                target="_blank"
+                class="btn btn-outline">
+                GitHub
+            </a>
+
+            <a
+                href="https://www.linkedin.com/"
+                target="_blank"
+                class="btn btn-outline">
+                LinkedIn
+            </a>
+
+            <a
+                href="mailto:your-email@example.com"
+                class="btn btn-primary">
+                Email Me
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    © 2026 Rohan Salunkhe · Aerospace Engineering & Computational Simulation
+
+</footer>
+
+
+</body>
+</html>
