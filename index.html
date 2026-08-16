@@ -300,50 +300,51 @@ section {
     z-index: 6;
 }
 
-.hero-visuals {
+.hero-name-bg {
     position: absolute;
-    inset: 72px 0 0;
-    pointer-events: none;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    text-align: center;
+    font-size: clamp(100px, 20vw, 300px);
+    line-height: 0.8;
+    font-weight: 900;
+    letter-spacing: -10px;
+    color: rgba(85,184,255,0.055);
+    white-space: nowrap;
+    user-select: none;
     z-index: 1;
 }
 
-.afterburner-photo {
+.hero-cutout-area {
     position: absolute;
-    left: -90px;
-    bottom: 55px;
-    width: 48%;
-    max-width: 560px;
-    height: 300px;
-    object-fit: cover;
-    object-position: center;
-    opacity: 0.32;
-    border-radius: 14px;
-    border: 1px solid rgba(85,184,255,0.18);
-    filter: saturate(0.9) contrast(1.05);
-}
-
-.profile-photo {
-    position: absolute;
-    right: 10px;
+    right: 5%;
     bottom: 0;
-    width: 290px;
-    height: 360px;
-    object-fit: cover;
-    object-position: center top;
-    border-radius: 16px 16px 0 0;
-    border: 1px solid rgba(85,184,255,0.28);
-    box-shadow: 0 18px 60px rgba(0,0,0,0.35);
+    width: 360px;
+    height: 500px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    z-index: 4;
+    pointer-events: none;
 }
 
-.iitkgp-logo {
-    position: absolute;
-    right: 280px;
-    top: 20px;
-    width: 180px;
-    height: 180px;
-    object-fit: contain;
-    opacity: 0.10;
-    filter: brightness(1.4) saturate(0.8);
+.cutout-placeholder {
+    width: 300px;
+    height: 440px;
+    border: 1px dashed rgba(85,184,255,0.28);
+    border-bottom: none;
+    border-radius: 150px 150px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(139,216,255,0.55);
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+    background: linear-gradient(180deg, rgba(85,184,255,0.035), transparent);
 }
 
 .hero-tag {
@@ -369,12 +370,16 @@ section {
 
     letter-spacing: -3px;
 
-    max-width: 1000px;
+    max-width: 900px;
 
     margin-bottom: 28px;
 
     position: relative;
     z-index: 7;
+}
+
+.hero h1 .hero-accent {
+    color: var(--accent);
 }
 
 .hero h1 span {
@@ -1132,32 +1137,22 @@ footer {
 
 @media(max-width:800px) {
 
-    .hero-visuals {
-        inset: 64px 0 0;
+    .hero-name-bg {
+        font-size: 22vw;
+        letter-spacing: -4px;
     }
 
-    .burner-photo {
-        left: -80px;
-        bottom: 80px;
-        width: 75%;
-        height: 220px;
-        opacity: 0.18;
+    .hero-cutout-area {
+        right: -65px;
+        width: 250px;
+        height: 350px;
+        opacity: 0.75;
     }
 
-    .profile-photo {
-        right: -35px;
-        bottom: 0;
-        width: 180px;
-        height: 235px;
-        opacity: 0.9;
-    }
-
-    .iitkgp-logo {
-        right: 130px;
-        top: 35px;
-        width: 110px;
-        height: 110px;
-        opacity: 0.08;
+    .cutout-placeholder {
+        width: 210px;
+        height: 310px;
+        border-radius: 105px 105px 0 0;
     }
 
     .nav-links {
@@ -1223,7 +1218,7 @@ footer {
 
     *,
     *::before,
-    *:: {
+    *::after {
 
         scroll-behavior:
             auto !important;
@@ -1450,7 +1445,7 @@ footer {
 <div class="nav-container">
 
     <div class="logo">
-        Aero<span>Rohan</span>
+        AEROHAN
     </div>
 
     <ul class="nav-links">
@@ -1513,49 +1508,29 @@ footer {
 
 <div class="hero-container">
 
-    <div class="hero-visuals" aria-hidden="true">
-        <img
-            class="burner-photo"
-            src="./J58_AfterburnerT.jpeg"
-            alt=""
-            loading="eager"
-        >
+    <div class="hero-name-bg" aria-hidden="true">
+        AEROHAN
+    </div>
 
-        <img
-            class="iitkgp-logo"
-            src="./IIT_Kharagpur_Logo.svg.png"
-            alt=""
-            loading="eager"
-        >
-
-        <img
-            class="profile-photo"
-            src="./WhatsApp Image 2026-08-07 at 6.32.44 PM.jpeg"
-            alt=""
-            loading="eager"
-        >
+    <div class="hero-cutout-area" aria-label="Profile photo placeholder">
+        <div class="cutout-placeholder">
+            Add cutout photo here
+        </div>
     </div>
 
     <div class="hero-tag">
-        Aerospace Engineering • CFD • CAE
+        Aerospace Engineer • CFD • Aeroacoustics • CAE
     </div>
 
     <h1>
 
-        Hi, I'm
-        <span>Rohan</span>.<br>
-
-        I build & simulate
-        engineering systems.
+        Rohan Dnyaneshwar Salunkhe.<br>
+        <span class="hero-accent">I simulate. I analyse. I engineer.</span>
 
     </h1>
 
     <p class="hero-subtitle">
-
-        Aerospace Engineer focused on
-        Computational Fluid Dynamics,
-        Aeroacoustics, CAE and numerical
-        simulation.
+        M.Tech Aerospace Engineering at IIT Kharagpur, with a Mechanical Engineering background and hands-on experience in CFD, aeroacoustics, turbomachinery and engineering simulation.
 
     </p>
 
@@ -1605,27 +1580,15 @@ footer {
         <div class="about-text">
 
             <p>
-                I am an Aerospace Engineering
-                postgraduate with a background in
-                Mechanical Engineering and a strong
-                interest in computational engineering.
+                I am pursuing M.Tech in Aerospace Engineering at the Indian Institute of Technology Kharagpur, after completing B.Tech in Mechanical Engineering from Walchand College of Engineering, Sangli.
             </p>
 
             <p>
-                My interests lie at the intersection
-                of aerospace engineering, fluid
-                mechanics and numerical simulation.
-                I enjoy using CFD and CAE tools to
-                understand complex engineering
-                problems and develop practical
-                solutions.
+                My work focuses on Computational Fluid Dynamics, aeroacoustics, compressible flows, propulsion systems and turbomachinery. I enjoy using simulation to understand complex flow physics and engineering performance.
             </p>
 
             <p>
-                My current technical interests include
-                supersonic flows, aeroacoustics,
-                turbomachinery, CFD, FEM and
-                engineering simulation.
+                I have research and industrial experience through LPSC, ISRO and Atlas Copco, along with academic projects involving supersonic jets, variable-geometry supersonic inlets, turbofan cycle analysis and engineering design.
             </p>
 
         </div>
@@ -1639,7 +1602,7 @@ footer {
 
             <div class="info">
                 <span>Education</span>
-                <span>M.Tech Aerospace</span>
+                <span>M.Tech Aerospace Engineering</span>
             </div>
 
             <div class="info">
@@ -1653,8 +1616,8 @@ footer {
             </div>
 
             <div class="info">
-                <span>Focus</span>
-                <span>CFD & CAE</span>
+                <span>GATE AE 2025</span>
+                <span>AIR 185</span>
             </div>
 
         </div>
@@ -1692,9 +1655,7 @@ footer {
             </h3>
 
             <p>
-                ANSYS Fluent, ANSYS CFX,
-                OpenFOAM, RANS, LES,
-                DES and compressible flow analysis.
+                ANSYS Fluent, ANSYS CFX, OpenFOAM and ICEM CFD, with focus on CFD, compressible flow and turbulence modelling.
             </p>
 
         </div>
@@ -1707,9 +1668,7 @@ footer {
             </h3>
 
             <p>
-                Supersonic jet noise,
-                screech tones, acoustic pressure
-                fluctuations and FFT analysis.
+                Supersonic jet noise, screech tones, shock-cell structures, acoustic pressure fluctuations and active/passive mitigation concepts.
             </p>
 
         </div>
@@ -1722,10 +1681,7 @@ footer {
             </h3>
 
             <p>
-                Structural analysis,
-                finite element methods,
-                engineering simulation and
-                design optimization.
+                Finite Element Analysis, solid mechanics and engineering simulation for design and performance evaluation.
             </p>
 
         </div>
@@ -1738,8 +1694,7 @@ footer {
             </h3>
 
             <p>
-                CATIA V5, SolidWorks and AutoCAD
-                for mechanical and aerospace design.
+                SolidWorks, CATIA V5 and AutoCAD for mechanical and aerospace design.
             </p>
 
         </div>
@@ -1752,8 +1707,7 @@ footer {
             </h3>
 
             <p>
-                Python, MATLAB and numerical
-                methods for engineering computation.
+                Python, Fortran, MPI, OpenMP and High Performance Computing (HPC).
             </p>
 
         </div>
@@ -1766,9 +1720,7 @@ footer {
             </h3>
 
             <p>
-                Fluid mechanics, aerodynamics,
-                gas dynamics, turbomachinery
-                and numerical simulation.
+                Computational Fluid Dynamics, compressible flow, turbomachinery and numerical engineering analysis.
             </p>
 
         </div>
@@ -1812,11 +1764,7 @@ footer {
             </h3>
 
             <p>
-                CFD investigation of a supersonic
-                convergent-divergent nozzle with
-                focus on shock-cell structure,
-                acoustic pressure fluctuations and
-                screech-tone prediction.
+                CFD-based aeroacoustic investigation of screech noise generated by under-expanded supersonic jets, including shock-cell structures, acoustic feedback and noise mitigation techniques.
             </p>
 
             <div class="tags">
@@ -1849,28 +1797,25 @@ footer {
             </div>
 
             <h3>
-                Turbopump CFD Analysis
+                Variable Geometry Supersonic Inlet
             </h3>
 
             <p>
-                Computational investigation of
-                centrifugal turbopump performance
-                with emphasis on impeller flow
-                behaviour and surface roughness effects.
+                CFD-based optimization of a variable-geometry supersonic inlet over a range of Mach numbers, evaluating total-pressure recovery and inlet performance.
             </p>
 
             <div class="tags">
 
                 <span class="tag">
-                    ANSYS CFX
-                </span>
-
-                <span class="tag">
-                    Turbomachinery
-                </span>
-
-                <span class="tag">
                     CFD
+                </span>
+
+                <span class="tag">
+                    Supersonic Flow
+                </span>
+
+                <span class="tag">
+                    Inlet Design
                 </span>
 
             </div>
@@ -1885,28 +1830,25 @@ footer {
             </div>
 
             <h3>
-                BAJA ATV Design & Analysis
+                PS-90A-76 Turbofan Performance Analysis
             </h3>
 
             <p>
-                Design and structural analysis of
-                an SAE BAJA ATV roll cage with focus
-                on strength, manufacturability and
-                mechanical design.
+                Parametric cycle analysis of the PS-90A-76 turbofan by varying Overall Pressure Ratio and Turbine Inlet Temperature, with evaluation of specific thrust, TSFC and thermal efficiency.
             </p>
 
             <div class="tags">
 
                 <span class="tag">
-                    CATIA V5
+                    Propulsion
                 </span>
 
                 <span class="tag">
-                    ANSYS
+                    Cycle Analysis
                 </span>
 
                 <span class="tag">
-                    FEM
+                    Turbofan
                 </span>
 
             </div>
@@ -1921,28 +1863,25 @@ footer {
             </div>
 
             <h3>
-                Glidrone
+                Dual-Nozzle 3D Printer
             </h3>
 
             <p>
-                Conceptual design of a drone
-                incorporating glider-like aerodynamic
-                characteristics for improved flight
-                performance.
+                Designed, fabricated and optimized a dual-nozzle FDM 3D printer for simultaneous model and support-material deposition, improving extrusion synchronization and dimensional accuracy.
             </p>
 
             <div class="tags">
 
                 <span class="tag">
-                    Aerospace Design
+                    Mechanical Design
                 </span>
 
                 <span class="tag">
-                    CAD
+                    Additive Manufacturing
                 </span>
 
                 <span class="tag">
-                    Aerodynamics
+                    Optimization
                 </span>
 
             </div>
@@ -1978,22 +1917,19 @@ footer {
         <div class="timeline-item">
 
             <h3>
-                M.Tech — Aerospace Engineering
+                Research Intern
             </h3>
 
             <div class="company">
-                IIT Kharagpur
+                Liquid Propulsion Systems Centre (LPSC), ISRO
             </div>
 
             <div class="date">
-                Aerospace Engineering
+                May 2026 – Jun 2026
             </div>
 
             <p>
-                Advanced studies and research in
-                aerospace engineering, CFD,
-                aerodynamics and computational
-                simulation.
+                Conducted ANSYS CFX simulations investigating the influence of impeller blade surface roughness on centrifugal turbopump performance, including pressure distribution, hydraulic efficiency, head coefficient and flow characteristics.
             </p>
 
         </div>
@@ -2002,7 +1938,7 @@ footer {
         <div class="timeline-item">
 
             <h3>
-                Graduate Engineering Trainee
+                Engineer
             </h3>
 
             <div class="company">
@@ -2010,14 +1946,11 @@ footer {
             </div>
 
             <div class="date">
-                Engineering Experience
+                Jul 2024 – Jul 2025
             </div>
 
             <p>
-                Worked in an industrial engineering
-                environment, gaining exposure to
-                engineering processes, technical
-                documentation and product development.
+                Delivered global engineering support through service documentation and visualization; developed service kits, 3D work instructions and maintenance procedures using SAP Visual Enterprise Author, and supported root-cause analysis and onsite service activities.
             </p>
 
         </div>
@@ -2030,17 +1963,15 @@ footer {
             </h3>
 
             <div class="company">
-                ISRO LPSC
+                Atlas Copco Group (GECIA)
             </div>
 
             <div class="date">
-                Valiamala
+                Jan 2024 – Apr 2024
             </div>
 
             <p>
-                Internship experience in a
-                research-oriented aerospace
-                environment.
+                Automated Quality Checklist categorization using Microsoft Power Automate and Power BI and developed an automated Service Kit Comparison process to improve engineering workflow efficiency.
             </p>
 
         </div>
@@ -2071,44 +2002,41 @@ footer {
     <div class="research-box">
 
         <p>
-            My research interests are focused on
-            computational aerospace engineering
-            and the application of CFD and numerical
-            methods to complex engineering problems.
+            My research interests are centered on computational aerospace engineering and the application of CFD and numerical methods to complex flow, propulsion and turbomachinery problems.
         </p>
 
         <div class="research-list">
 
             <div>
-                Supersonic & compressible flows
+                Computational Fluid Dynamics
             </div>
 
             <div>
-                Jet aeroacoustics
+                Aeroacoustics
             </div>
 
             <div>
-                Screech-tone mitigation
+                Compressible Flows
             </div>
 
             <div>
-                CFD & turbulence modelling
+                Propulsion Systems
             </div>
 
             <div>
-                Turbomachinery CFD
+                Turbomachinery
             </div>
 
             <div>
-                Numerical methods
+                Aircraft Design
             </div>
 
             <div>
-                FEM & structural analysis
+                High Performance Computing
             </div>
 
             <div>
-                Aerospace propulsion
+                Numerical Methods & Aerodynamics
             </div>
 
         </div>
@@ -2139,9 +2067,7 @@ footer {
     </h2>
 
     <p>
-        I'm interested in aerospace engineering,
-        CFD, CAE, simulation and research
-        opportunities. Feel free to connect with me.
+        I am open to opportunities and collaborations in aerospace engineering, CFD, aeroacoustics, propulsion, turbomachinery and computational research.
     </p>
 
     <div class="socials">
@@ -2156,7 +2082,7 @@ footer {
         </a>
 
         <a
-            href="https://www.linkedin.com/"
+            href="https://linkedin.com/in/rohan-salunkhe-64792b212"
             target="_blank"
             class="btn btn-outline">
 
@@ -2165,7 +2091,7 @@ footer {
         </a>
 
         <a
-            href="mailto:your-email@example.com"
+            href="mailto:salunkherohan2002@gmail.com"
             class="btn btn-primary">
 
             Email Me
@@ -2187,8 +2113,7 @@ footer {
 
 <footer>
 
-    © 2026 Rohan Salunkhe ·
-    Aerospace Engineering & Computational Simulation
+    © 2026 Rohan Salunkhe · Aerospace Engineering & Computational Simulation
 
 </footer>
 
