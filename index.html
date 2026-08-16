@@ -331,20 +331,15 @@ section {
 }
 
 .cutout-placeholder {
-    width: 300px;
-    height: 440px;
-    border: 1px dashed rgba(85,184,255,0.28);
-    border-bottom: none;
-    border-radius: 150px 150px 0 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: rgba(139,216,255,0.55);
-    font-size: 12px;
-    letter-spacing: 2px;
-    text-align: center;
-    text-transform: uppercase;
-    background: linear-gradient(180deg, rgba(85,184,255,0.035), transparent);
+    width: 360px;
+    height: auto;
+    display: block;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    object-fit: contain;
+    object-position: bottom center;
+    filter: drop-shadow(0 0 22px rgba(85,184,255,0.16));
 }
 
 .hero-tag {
@@ -1150,9 +1145,9 @@ footer {
     }
 
     .cutout-placeholder {
-        width: 210px;
-        height: 310px;
-        border-radius: 105px 105px 0 0;
+        width: 250px;
+        height: auto;
+        border-radius: 0;
     }
 
     .nav-links {
@@ -1512,10 +1507,11 @@ footer {
         AEROHAN
     </div>
 
-    <div class="hero-cutout-area" aria-label="Profile photo placeholder">
-        <div class="cutout-placeholder">
-            Add cutout photo here
-        </div>
+    <div class="hero-cutout-area" aria-label="Profile photo">
+        <img
+            class="cutout-placeholder"
+            src="WhatsApp_Image_2026-08-07_at_6.32.44_PM-removebg-preview.png"
+            alt="Rohan Salunkhe">
     </div>
 
     <div class="hero-tag">
@@ -1524,7 +1520,8 @@ footer {
 
     <h1>
 
-        Rohan.<br>
+        Rohan Dnyaneshwar Salunkhe.<br>
+        <span class="hero-accent">I simulate. I analyse. I engineer.</span>
 
     </h1>
 
